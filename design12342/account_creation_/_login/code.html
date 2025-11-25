@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skincare Companion - Login</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#24543A", accent: "#C4A484", "background-light": "#f6f7f7", "background-dark": "#151d19", "text-light": "#333333", "text-dark": "#E3E3E1", "border-light": "#D1D1D1", "border-dark": "#444444"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            font-size: 24px;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex min-h-screen w-full flex-col items-center justify-center p-4">
+<div class="w-full max-w-md space-y-6">
+<!-- Logo -->
+<div class="flex flex-col items-center justify-center space-y-2">
+<svg class="h-12 w-12 text-primary" fill="none" stroke="currentColor" stroke-width="1.5" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+<path d="M9.813 15.904 9 18.75l-.813-2.846a4.5 4.5 0 0 0-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 0 0 3.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 0 0 3.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 0 0-3.09 3.09ZM18.259 8.715 18 9.75l-.259-1.035a3.375 3.375 0 0 0-2.455-2.456L14.25 6l1.036-.259a3.375 3.375 0 0 0 2.455-2.456L18 2.25l.259 1.035a3.375 3.375 0 0 0 2.456 2.456L21.75 6l-1.035.259a3.375 3.375 0 0 0-2.456 2.456Z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<!-- Headline Text -->
+<h1 class="text-text-light dark:text-text-dark tracking-light text-center text-3xl font-bold leading-tight">Welcome Back</h1>
+<p class="text-center text-text-light/70 dark:text-text-dark/70">Log in to continue your skincare journey.</p>
+<!-- Segmented Buttons -->
+<div class="flex px-4 py-1">
+<div class="flex h-12 flex-1 items-center justify-center rounded-lg bg-background-light p-1 shadow-inner dark:bg-background-dark/50">
+<label class="flex h-full flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-light/60 has-[:checked]:bg-accent/20 has-[:checked]:text-accent has-[:checked]:font-semibold dark:text-text-dark/60 dark:has-[:checked]:text-accent">
+<span class="truncate">Log In</span>
+<input checked="" class="invisible w-0" name="auth-toggle" type="radio" value="Log In"/>
+</label>
+<label class="flex h-full flex-1 cursor-pointer items-center justify-center overflow-hidden rounded-md px-2 text-sm font-medium leading-normal text-text-light/60 has-[:checked]:bg-accent/20 has-[:checked]:text-accent has-[:checked]:font-semibold dark:text-text-dark/60 dark:has-[:checked]:text-accent">
+<span class="truncate">Sign Up</span>
+<input class="invisible w-0" name="auth-toggle" type="radio" value="Sign Up"/>
+</label>
+</div>
+</div>
+<!-- Form -->
+<div class="space-y-4 px-4">
+<!-- Email Field -->
+<label class="flex flex-col">
+<p class="pb-2 text-base font-medium leading-normal text-text-light dark:text-text-dark">Email</p>
+<input class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-background-light p-[15px] text-base font-normal leading-normal text-text-light placeholder:text-text-light/50 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/30 dark:border-border-dark dark:bg-background-dark dark:text-text-dark dark:placeholder:text-text-dark/50 dark:focus:border-accent" placeholder="you@example.com" value=""/>
+</label>
+<!-- Password Field -->
+<label class="flex flex-col">
+<p class="pb-2 text-base font-medium leading-normal text-text-light dark:text-text-dark">Password</p>
+<div class="relative flex w-full flex-1 items-stretch">
+<input class="form-input flex h-14 w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-background-light p-[15px] pr-12 text-base font-normal leading-normal text-text-light placeholder:text-text-light/50 focus:border-primary focus:outline-0 focus:ring-2 focus:ring-primary/30 dark:border-border-dark dark:bg-background-dark dark:text-text-dark dark:placeholder:text-text-dark/50 dark:focus:border-accent" placeholder="Enter your password" type="password" value=""/>
+<div class="absolute inset-y-0 right-0 flex cursor-pointer items-center justify-center pr-4 text-text-light/60 dark:text-text-dark/60" data-icon="visibility" data-size="24px" data-weight="regular">
+<span class="material-symbols-outlined">visibility</span>
+</div>
+</div>
+</label>
+<!-- Forgot Password Link -->
+<div class="text-right">
+<a class="text-sm font-medium text-accent hover:underline" href="#">Forgot Password?</a>
+</div>
+<!-- Primary CTA -->
+<button class="flex h-14 w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-base font-semibold text-white transition-colors hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 dark:focus:ring-offset-background-dark">Log In</button>
+</div>
+<!-- Divider -->
+<div class="relative flex items-center px-4 py-2">
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+<span class="mx-4 flex-shrink text-sm text-text-light/60 dark:text-text-dark/60">Or continue with</span>
+<div class="flex-grow border-t border-border-light dark:border-border-dark"></div>
+</div>
+<!-- Social Logins -->
+<div class="grid grid-cols-3 gap-4 px-4">
+<button class="flex h-14 w-full items-center justify-center rounded-lg border border-border-light bg-background-light text-text-light/80 transition-colors hover:bg-gray-100 dark:border-border-dark dark:bg-background-dark/50 dark:text-text-dark/80 dark:hover:bg-border-dark">
+<img alt="Google logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOGFFPDjdCtMemWC-QB5u7eoLMvaJFCGt6UZx3ygeYIn5v3Gx9MlAAJ-V1har_5O6r-jViZMPJtMAW01O3WDjwmbCpR4kv7gdEyfvy89vQ-T74tD0eguatSd1k6Pnr5hUOLepxp_LDgyzkmWO-JhotDmfTKU0q6K2oH0aj4nXQEoijpRix-35jKrOpqUgsOctL7hNYy-RWaa8oLqfq3F-Y7ruJ708TS9ndYdJ8qy65ftZUE0weJXQ_KbFHwt9tx4quSmaXERicwcsu"/>
+</button>
+<button class="flex h-14 w-full items-center justify-center rounded-lg border border-border-light bg-background-light text-text-light/80 transition-colors hover:bg-gray-100 dark:border-border-dark dark:bg-background-dark/50 dark:text-text-dark/80 dark:hover:bg-border-dark">
+<img alt="Apple logo" class="h-6 w-6 dark:invert" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtRDlsPDUU1GsDQiB9_f2SCgpiGylqKy5ng3DqePj7eLzrdzBi4p0VbJfYq5-yNvXNAhmDB2tk8DerliRVRcLcNSJbMHVmtlv2mgpuoD3kXI59r6eKuHKYWnaFnQjT3e1LSmFmvJO5Q0uH9zxnGz5BJm4-GjEihl61aIR2Zn8riPrvgb3MxPrduKHWvODavA9FIr_n_5Yc3KbBmaGOGiGAKSEGoT9SW6XJQAPvyq7qzj5bBXtyxdJBCFcBDxO3k3sPT5_-pbTrAaLj"/>
+</button>
+<button class="flex h-14 w-full items-center justify-center rounded-lg border border-border-light bg-background-light text-text-light/80 transition-colors hover:bg-gray-100 dark:border-border-dark dark:bg-background-dark/50 dark:text-text-dark/80 dark:hover:bg-border-dark">
+<img alt="Facebook logo" class="h-6 w-6" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBE_Sad_tI6sY_rfCHtQtDAzhBi1b18XyEc-0Zo4GTIC3b3c6KM8SpKuZF1DH5Iw_WIzJe3LhQMCnMBjJV7n8Lb1DtZOp16LW0o51AFBzb-O0J4NaXvR9i1Y88Y4y-OHwNlJlLzGrrzKzD40TSFF3JQAVKW4V1IDIGcYOimbSXoQrNQHMec_ST8sJmLCsm1oKSbmh7z3djoOvmzUQcRQoIOjRsCvU3iSOxXVbiQYV4x4lDwjJmTXI8IJR7NG_XQAoAhNGNAOXKHe6xa"/>
+</button>
+</div>
+<!-- Terms Text -->
+<p class="px-4 pt-4 text-center text-xs text-text-light/50 dark:text-text-dark/50">
+                By continuing, you agree to our <a class="font-medium text-accent hover:underline" href="#">Terms of Service</a> and <a class="font-medium text-accent hover:underline" href="#">Privacy Policy</a>.
+            </p>
+</div>
+</div>
+</body></html>

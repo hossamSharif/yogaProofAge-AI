@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skincare Concerns Selection</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#24543A", "background-light": "#f6f7f7", "background-dark": "#151d19", "text-primary-light": "#333333", "text-secondary-light": "#888888", "text-primary-dark": "#E0DED9", "text-secondary-dark": "#A3A09A", "border-light": "#EAE8E4", "border-dark": "#44413B"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 300,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark overflow-x-hidden">
+<div class="flex flex-col flex-grow">
+<!-- Header Section -->
+<div class="sticky top-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10 pt-4">
+<div class="flex flex-col gap-3 px-4">
+<div class="flex gap-6 justify-between items-center">
+<p class="text-text-primary-light dark:text-text-primary-dark text-base font-medium leading-normal">Step 2 of 5</p>
+</div>
+<div class="rounded-full bg-border-light dark:bg-border-dark">
+<div class="h-2 rounded-full bg-primary" style="width: 40%;"></div>
+</div>
+</div>
+<h1 class="text-text-primary-light dark:text-text-primary-dark tracking-light text-[32px] font-bold leading-tight px-4 text-left pb-1 pt-6">Select Your Skin Concerns</h1>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal pb-4 pt-1 px-4">Choose up to 3 to get started.</p>
+</div>
+<!-- Concern Selection Grid -->
+<div class="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] gap-3 p-4 flex-grow">
+<!-- Selected Card Example -->
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-primary bg-primary/10 dark:bg-primary/20 p-4 flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary text-3xl">dermatology</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Acne &amp; Blemishes</h2>
+<p class="text-primary text-sm font-normal leading-normal">Reduce breakouts</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">water_drop</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Hydration &amp; Dryness</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Moisturize skin</p>
+</div>
+</div>
+<!-- Selected Card Example 2 -->
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-primary bg-primary/10 dark:bg-primary/20 p-4 flex-col justify-center items-center text-center">
+<span class="material-symbols-outlined text-primary text-3xl">auto_awesome</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Fine Lines &amp; Wrinkles</h2>
+<p class="text-primary text-sm font-normal leading-normal">Anti-aging</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">healing</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Redness &amp; Sensitivity</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Soothe irritation</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">flare</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Dark Spots</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Hyperpigmentation</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">tonality</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Uneven Skin Tone</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Balance complexion</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">grain</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Oil Control &amp; Pores</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Minimize pores</p>
+</div>
+</div>
+<div class="flex flex-1 cursor-pointer gap-4 rounded-lg border-2 border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark p-4 flex-col justify-center items-center text-center hover:border-primary/50 dark:hover:border-primary/50 transition-colors duration-200">
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark text-3xl">directions_run</span>
+<div class="flex flex-col gap-1">
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-base font-bold leading-tight">Firmness &amp; Elasticity</h2>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-normal leading-normal">Improve structure</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer / Action Bar -->
+<div class="sticky bottom-0 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm z-10">
+<div class="flex px-4 py-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-5 flex-1 bg-primary text-background-light dark:text-background-dark text-base font-bold leading-normal tracking-[0.015em] hover:opacity-90 transition-opacity">
+<span class="truncate">Continue</span>
+</button>
+</div>
+</div>
+</div>
+</body></html>

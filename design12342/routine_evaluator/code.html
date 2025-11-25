@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Routine Effectiveness Report</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#24543A", secondary: "#FF7F50", success: "#98FF98", "background-light": "#f6f7f7", "background-dark": "#151d19", "surface-light": "#FFFFFF", "surface-dark": "#2c3e3e", "text-primary-light": "#36454F", "text-primary-dark": "#E0E0E0", "text-secondary-light": "#A9A9A9", "text-secondary-dark": "#B0B0B0"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="text-text-primary-light dark:text-text-primary-dark flex size-12 shrink-0 items-center justify-center">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<h1 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Routine Effectiveness Report</h1>
+<div class="flex size-12 shrink-0 items-center"></div> <!-- Spacer -->
+</div>
+<!-- Donut Chart & Progress Bar -->
+<div class="p-4">
+<div class="relative flex items-center justify-center w-48 h-48 mx-auto my-4">
+<svg class="w-full h-full transform -rotate-90" viewbox="0 0 120 120">
+<circle cx="60" cy="60" fill="none" r="54" stroke="#E6E6E6" stroke-width="12"></circle>
+<circle class="text-primary stroke-linecap-round" cx="60" cy="60" fill="none" r="54" stroke="currentColor" stroke-dasharray="339.29" stroke-dashoffset="50.89" stroke-width="12"></circle> <!-- 339.29 * (1 - 0.85) -->
+</svg>
+<div class="absolute flex flex-col items-center justify-center">
+<span class="text-4xl font-bold text-text-primary-light dark:text-text-primary-dark">85%</span>
+<span class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Effective</span>
+</div>
+</div>
+<p class="text-center text-sm font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark -mt-2">Based on your skin goals</p>
+</div>
+<!-- SectionHeader: Key Insights -->
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Key Insights</h2>
+<!-- Carousel -->
+<div class="flex overflow-x-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden pl-4 pr-1">
+<div class="flex items-stretch gap-3 pb-4">
+<div class="flex h-full flex-1 flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-3 shadow-sm min-w-40 items-center text-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">water_drop</span>
+</div>
+<p class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Hydration Level</p>
+<p class="text-sm font-normal leading-normal text-primary">Great AM Hydration</p>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-3 shadow-sm min-w-40 items-center text-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">wb_sunny</span>
+</div>
+<p class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Sun Protection</p>
+<p class="text-sm font-normal leading-normal text-primary">Consistent Coverage</p>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-3 shadow-sm min-w-40 items-center text-center">
+<div class="flex items-center justify-center size-12 rounded-full bg-primary/20 text-primary">
+<span class="material-symbols-outlined">layers</span>
+</div>
+<p class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Exfoliation Balance</p>
+<p class="text-sm font-normal leading-normal text-primary">Well Balanced</p>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-xl bg-surface-light dark:bg-surface-dark p-3 shadow-sm min-w-40 items-center text-center border-2 border-secondary/50">
+<div class="flex items-center justify-center size-12 rounded-full bg-secondary/20 text-secondary">
+<span class="material-symbols-outlined">science</span>
+</div>
+<p class="text-base font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">Antioxidant Coverage</p>
+<p class="text-sm font-normal leading-normal text-secondary">Missing Antioxidant</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Routine Gaps -->
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Routine Gaps</h2>
+<!-- Routine Gaps List -->
+<div class="flex flex-col gap-3 px-4">
+<div class="flex items-center gap-4 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-center size-10 rounded-full bg-secondary/20 text-secondary shrink-0">
+<span class="material-symbols-outlined">add_circle</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-text-primary-light dark:text-text-primary-dark">Missing: Morning Antioxidant</p>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Add a Vitamin C serum to protect against free radicals.</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-center size-10 rounded-full bg-secondary/20 text-secondary shrink-0">
+<span class="material-symbols-outlined">error</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-text-primary-light dark:text-text-primary-dark">Conflict: Retinol &amp; AHA</p>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Avoid using these on the same night to prevent irritation.</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">chevron_right</span>
+</div>
+<div class="flex items-center gap-4 rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<div class="flex items-center justify-center size-10 rounded-full bg-primary/20 text-primary shrink-0">
+<span class="material-symbols-outlined">recommend</span>
+</div>
+<div class="flex-grow">
+<p class="font-medium text-text-primary-light dark:text-text-primary-dark">Opportunity: Add Niacinamide</p>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">Can improve texture and reduce redness.</p>
+</div>
+<span class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">chevron_right</span>
+</div>
+</div>
+<!-- Improvement Timeline Chart -->
+<h2 class="text-text-primary-light dark:text-text-primary-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-6">Projected Improvement: Hyperpigmentation</h2>
+<div class="px-4 py-2">
+<div class="rounded-lg bg-surface-light dark:bg-surface-dark p-4 shadow-sm">
+<div class="flex items-end h-40 border-l border-b border-gray-200 dark:border-gray-600 space-x-4 pl-4 pb-2">
+<!-- Week 4 Bar -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-primary/30 rounded-t-md" style="height: 25%;"></div>
+<p class="text-xs mt-2 text-text-secondary-light dark:text-text-secondary-dark">4 wks</p>
+</div>
+<!-- Week 8 Bar -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-primary/60 rounded-t-md" style="height: 55%;"></div>
+<p class="text-xs mt-2 text-text-secondary-light dark:text-text-secondary-dark">8 wks</p>
+</div>
+<!-- Week 12 Bar -->
+<div class="flex flex-col items-center flex-1">
+<div class="w-full bg-primary rounded-t-md" style="height: 80%;"></div>
+<p class="text-xs mt-2 text-text-secondary-light dark:text-text-secondary-dark">12 wks</p>
+</div>
+</div>
+<p class="text-center text-xs mt-3 text-text-secondary-light dark:text-text-secondary-dark">Y-Axis represents skin clarity improvement</p>
+</div>
+</div>
+<!-- CTA Button -->
+<div class="p-4 mt-auto sticky bottom-0 bg-gradient-to-t from-background-light dark:from-background-dark to-transparent">
+<button class="w-full bg-primary text-white font-bold py-4 px-4 rounded-lg shadow-lg hover:bg-primary/90 transition-colors">
+                Enhance Your Routine
+            </button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Manage Subscription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#1A4D2E", // Deep Green
+              "accent": "#B8860B", // Muted Gold
+              "background-light": "#FCFDFB",
+              "background-dark": "#101412",
+              "text-light": "#101412",
+              "text-dark": "#E3E5E4",
+              "text-secondary-light": "#58625D",
+              "text-secondary-dark": "#A0A8A3",
+              "card-light": "#FFFFFF",
+              "card-dark": "#191E1B",
+              "border-light": "#F0F2F1",
+              "border-dark": "#2A302D",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: { "DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display">
+<div class="relative flex min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<div class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Manage Subscription</h1>
+<div class="flex size-12 shrink-0 items-center"></div>
+</div>
+<!-- Current Plan Section -->
+<div class="p-4">
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">Your Current Plan</h2>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-xl shadow-[0_4px_12px_rgba(0,0,0,0.05)] bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex w-full grow flex-col items-stretch justify-center gap-2 p-6">
+<p class="text-accent text-lg font-bold leading-tight tracking-[-0.015em]">Premium AI</p>
+<div class="flex flex-col gap-4">
+<div class="flex flex-col gap-1">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal">Renews on Dec 24, 2024</p>
+<p class="text-text-light dark:text-text-dark text-2xl font-bold leading-tight">$9.99<span class="text-base font-normal text-text-secondary-light dark:text-text-secondary-dark"> / Month</span></p>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary/10 text-primary text-sm font-medium leading-normal flex-1">
+<span class="truncate">Manage Plan</span>
+</button>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal flex-1">
+<span class="truncate">Cancel</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Upgrade Section -->
+<div class="px-4">
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-base font-normal leading-normal pb-3 pt-1 px-4 text-center">Unlock advanced analysis &amp; tracking by upgrading.</p>
+<div class="flex px-4 py-3">
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-primary text-white dark:text-text-light text-base font-bold leading-normal tracking-[0.015em] shadow-lg shadow-primary/20">
+<span class="truncate">Upgrade Plan</span>
+</button>
+</div>
+<div class="flex justify-center py-2">
+<a class="text-primary text-sm font-medium" href="#">Compare Plans</a>
+</div>
+</div>
+<!-- Spacer -->
+<div class="h-6"></div>
+<!-- Billing History -->
+<div class="px-4">
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Billing History</h2>
+<div class="flex flex-col gap-3 px-4 py-2">
+<!-- Invoice Item 1 -->
+<div class="flex items-center justify-between rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Invoice - Nov 24, 2024</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm leading-normal">$9.99 - Paid</p>
+</div>
+<button class="flex items-center justify-center p-2 text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Invoice Item 2 -->
+<div class="flex items-center justify-between rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Invoice - Oct 24, 2024</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm leading-normal">$9.99 - Paid</p>
+</div>
+<button class="flex items-center justify-center p-2 text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+<!-- Invoice Item 3 -->
+<div class="flex items-center justify-between rounded-lg p-4 bg-card-light dark:bg-card-dark border border-border-light dark:border-border-dark">
+<div class="flex flex-col">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Invoice - Sep 24, 2024</p>
+<p class="text-text-secondary-light dark:text-text-secondary-dark text-sm leading-normal">$9.99 - Paid</p>
+</div>
+<button class="flex items-center justify-center p-2 text-primary">
+<span class="material-symbols-outlined">download</span>
+</button>
+</div>
+</div>
+</div>
+<!-- FAQ Link -->
+<div class="flex justify-center px-4 py-8">
+<a class="text-text-secondary-light dark:text-text-secondary-dark text-sm font-medium leading-normal" href="#">Need help with your subscription?</a>
+</div>
+</div>
+</body></html>

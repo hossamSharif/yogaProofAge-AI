@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skincare Companion Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#25563b",
+            "accent": "#d4af37",
+            "background-light": "#f6f7f7",
+            "background-dark": "#151d19",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-[#151d19] dark:text-[#f6f7f7]">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="pb-24">
+<!-- Top App Bar -->
+<div class="flex flex-col gap-2 p-4 pb-2">
+<div class="flex items-center h-12 justify-between">
+<div class="flex size-12 shrink-0 items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" data-alt="User profile picture of Olivia" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAlSMN-2lIbulaL6nWit9ZI9Ky4jOVCNjbPOg3MZS4QQ5a1pxOtCIPCq0U6YNLXpIMpL_Iurq_1RPE04DIAexvPysMdLgcEPjXZFzCZg5jWrDSQo---b1jMR_f96sA0Hsz6PBfFvQvt--OmTdQH1EBOeTDupSRwfgAhBwKtRFju4nA1nrJ62HZD530TKNM52TRQhB3eJfv1avYU0xESOP0U3k_LnBD6gB4egWLIDU1HHHLy_OC9xMHtximUDJjTWQgICYm3lnMNUIc_");'></div>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 bg-transparent text-primary dark:text-[#f6f7f7] gap-2 text-base font-bold leading-normal tracking-[0.015em] min-w-0 p-0">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+</div>
+</div>
+<p class="text-[#151d19] dark:text-[#f6f7f7] tracking-tight text-[28px] font-bold leading-tight">Good morning, Olivia</p>
+</div>
+<!-- Main Action Card -->
+<div class="p-4">
+<div class="bg-cover bg-center flex flex-col items-stretch justify-end rounded-xl pt-[132px]" data-alt="A woman with clear skin smiling gently" style='background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuAmHfYVfmeAEtlhxLcP3xC27x9C58vPvagn0PaN7twRKjbUdneR8LuQAFaZV8YB9aKcWfL7NcWrBXDqPD_eiKBPKYKWih1_zb4aB9xW7b0-zPDmn413cSof0Vn5FS59F9q3Rwwm9CDSHznE_KgS_7FzymPlsy288q3jmBA8ZLncjdhwGfyIXEtmlx7N4mmtp28u6yhWFj3IKXJFdKJa7nBwSVxY87kcdwDk46HceQzX0j5HdVykNtpmiZ58fU8VNTpesgpLSmpNh608");'>
+<div class="flex w-full items-end justify-between gap-4 p-4">
+<div class="flex max-w-[440px] flex-1 flex-col gap-1">
+<p class="text-white tracking-light text-2xl font-bold leading-tight max-w-[440px]">Analyze Your Skin</p>
+<p class="text-white text-base font-medium leading-normal">Get a detailed report of your skin health with our AI.</p>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Start Scan</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Routine Overview -->
+<h3 class="text-[#151d19] dark:text-[#f6f7f7] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Today's AM Routine</h3>
+<div class="flex overflow-y-auto [-ms-scrollbar-style:none] [scrollbar-width:none] [&amp;::-webkit-scrollbar]:hidden">
+<div class="flex items-stretch px-4 gap-3">
+<div class="flex h-full flex-1 flex-col gap-2 rounded-lg min-w-40">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" data-alt="A bottle of gentle skin cleanser" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuATvP-ZXTp9kIdM9UiIrdsW7_AnPdWMiP-dL0vWKSowpM0BjoQpU-8sj_DeLk7nKu92bO3X-gzFoqp6oMOk8TPuVA9Oc-Soqt7aULtTXyaoiNSg_suTxpHZ08ZOGNxSUfyCrhGAilTAWXHWzLeMqdElNFadFn4AcSi3Qn3KIKPWs95P29o_q4D_FU7OXd1kvBjpwYFRnM96ih41JJ3nUvd5nv9oIYMsXOtEEMO3eumrDZ4Obi0mvG5XuawQig28CzjZoRll574V4IWl");'></div>
+<div>
+<p class="text-[#151d19] dark:text-[#f6f7f7] text-base font-medium leading-normal">Cleanser</p>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-normal leading-normal">Step 1</p>
+</div>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-lg min-w-40">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" data-alt="A dropper bottle of vitamin C serum" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuArji9qa9oPjcL2twrk1wJ4KKuKuM7egnvljCWQitWYgWto6cDIsZwNFSiwFHMZ7Vs8RILASb9FQ3LAe06KEB1mEev_ObziHi6fsCMv02Pron3Ch1-9weWh1zGX2-spl0y6GXxNq4cZ7Gq9kEcLVNBBBu8b_nsFbGl54crrB7S2zqXFOEqUT8HEKLqTccpNjKBbqOKHNK3Z1nZUcQXvmMApeUX-hOVOHuVZRksgSHzj8D4tmBuO_oAdSGJoFU9d0I8ucL4_JGUEHWba");'></div>
+<div>
+<p class="text-[#151d19] dark:text-[#f6f7f7] text-base font-medium leading-normal">Serum</p>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-normal leading-normal">Step 2</p>
+</div>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-lg min-w-40">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" data-alt="A jar of hydrating moisturizer" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAj7QxJVtOAIeSm_hwWU5Tt0oX6rbKaH7e0Ynqk6GveieYzSTm0HSmFDfjPsy9Eyugcr9qVQF3k_hXA06SNH38V8gE0SiwBOlkM5qSDqmVmjsr8Eo8u1Z23BzvCSNpqb3nlT8_PKftES5p6b2VdQDUHI0TyuE5nJoBqn3X--Tm67iuLqRwk1mJbyq7JLS_sBctDlRbCRO-tw-lWmN98YP1u7sBmDLBeImoWGsomHIAw8YBP7Kdeej0rECRPbq33CfDwjLzdnKuUIlnO");'></div>
+<div>
+<p class="text-[#151d19] dark:text-[#f6f7f7] text-base font-medium leading-normal">Moisturizer</p>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-normal leading-normal">Step 3</p>
+</div>
+</div>
+<div class="flex h-full flex-1 flex-col gap-2 rounded-lg min-w-40">
+<div class="w-full bg-center bg-no-repeat aspect-square bg-cover rounded-xl flex flex-col" data-alt="A tube of SPF 50 sunscreen" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDiQzg9DJFZYPMbGQnuUD3hZAh1ObqqaT_sUkeHvprmUktOo9Hvv6vNads3uJbHRlmPRM4_8WAEDt90UBJE-MudLaw038SFZUJOe9ntU3q2rO23j57sUocSctpkgzrmQdAmEQrmpn-N5BCTkZzNsd40_UBDyDG295MNzG1-Jxvqsom8aFzOi6r5PlrKm5pclkrvHwqKjwoa3O8zOZcA00LEqjyi2IlTyU5AAx9MAmWSzWFPNQSP2EHvYzBaQ8bLKD5IvGWBpYfe3Ivm");'></div>
+<div>
+<p class="text-[#151d19] dark:text-[#f6f7f7] text-base font-medium leading-normal">SPF 50</p>
+<p class="text-primary/80 dark:text-primary/90 text-sm font-normal leading-normal">Step 4</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Progress Summary -->
+<h3 class="text-[#151d19] dark:text-[#f6f7f7] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-6">Progress Summary</h3>
+<div class="px-4">
+<div class="flex flex-col gap-3">
+<div class="flex w-full items-center gap-4 rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 p-4">
+<div class="flex h-16 w-16 flex-shrink-0 items-center justify-center">
+<div class="aspect-square w-full rounded-lg bg-cover bg-center" data-alt="Before photo of skin texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBxPDofqajai0vucnFaGdg4mXlco3ixQgTwstqciq9KlEh7lNjYzFvtxD-geWKEY61xlsnrRknpwtZn3BW9Vtb1PJAopG4bNrDxKBoIeitNpH9n_rTUdcyuTSUKFd2Eh0ENTcGyuJmctBw8S4_t-aiPW2ZjRID8zZf3hL_kCKo8f8TCOAxCB9I0agzUCc7xrGVA0NXjmFec9XN9TnuR2Ht7LoeVv3EWw2Wz3FxS5bjHvjAkJsadkabAgPHoL1yhcgEHYuJ4hwBvl7me')"></div>
+<div class="aspect-square w-full rounded-lg bg-cover bg-center -ml-4 border-2 border-background-light dark:border-background-dark" data-alt="After photo of improved skin texture" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB7fAx6rBOPzoH9YfgI7PTnkKkDtQjeqFpnHQJv0ICrhualNSlPlpS1u0Rbo2GQr72PoAtwQZtE1i8aVKnmudeXYcXv068sIOu-M9oOgboBDe1ZsLPAKAeawzBWeJ6Nr76X1ty885-0akroxQLLQLsYlLhjo4UvbyCYSjLSf5f8X3sZyGUFCbiq3SrhCsnflyuTeO4v0oVRd64p5Bvn1zYnP4sfQG-8oD3B5AwfBb3-3heFqKVcI2OQIgdM1jevvkEzfCFSOkVQwLIr')"></div>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="font-bold text-primary dark:text-white">See Your 7-Day Progress</p>
+<p class="text-sm text-[#151d19]/80 dark:text-[#f6f7f7]/80">Texture improved by 12%</p>
+</div>
+<span class="material-symbols-outlined text-primary dark:text-accent">arrow_forward_ios</span>
+</div>
+<div class="flex w-full items-center gap-4 rounded-xl border border-primary/20 bg-primary/5 dark:bg-primary/10 p-4">
+<div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10 dark:bg-accent/20">
+<span class="material-symbols-outlined text-primary dark:text-accent !text-4xl">book</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="font-bold text-primary dark:text-white">Recent Diary Entry</p>
+<p class="text-sm text-[#151d19]/80 dark:text-[#f6f7f7]/80">"Feeling hydrated after trying the new serum."</p>
+</div>
+<span class="material-symbols-outlined text-primary dark:text-accent">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+<!-- Contextual Tips -->
+<h3 class="text-[#151d19] dark:text-[#f6f7f7] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-6">Today's Tip</h3>
+<div class="px-4">
+<div class="flex w-full items-center gap-4 rounded-xl bg-accent/20 dark:bg-accent/10 p-4">
+<div class="flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-lg bg-accent/30 dark:bg-accent/20">
+<span class="material-symbols-outlined text-accent !text-4xl">wb_sunny</span>
+</div>
+<div class="flex flex-1 flex-col">
+<p class="font-bold text-amber-900 dark:text-accent">High UV Index Today (9)</p>
+<p class="text-sm text-amber-900/80 dark:text-accent/80">Don't forget to reapply your SPF every 2 hours if you're outdoors.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Bottom Navigation Bar -->
+<div class="fixed bottom-0 left-0 right-0 h-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-lg border-t border-black/10 dark:border-white/10">
+<div class="flex h-full items-center justify-around">
+<div class="flex flex-col items-center gap-1 text-primary dark:text-accent">
+<span class="material-symbols-outlined">home</span>
+<span class="text-xs font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">view_timeline</span>
+<span class="text-xs font-medium">Routine</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">search</span>
+<span class="text-xs font-medium">Products</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-500 dark:text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</div>
+</div>
+</div>
+</div>
+</body></html>

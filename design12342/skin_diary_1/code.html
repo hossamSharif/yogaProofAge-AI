@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Daily Skincare Log</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#24543A", "background-light": "#f6f7f7", "background-dark": "#151d19", "card-light": "#F8F8F4", "card-dark": "#2c2c2c", "text-primary-light": "#333333", "text-primary-dark": "#E0E0E0", "text-secondary-light": "#888888", "text-secondary-dark": "#A0A0A0"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm p-4 pb-2">
+<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-text-primary-light dark:text-text-primary-dark">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-text-primary-light dark:text-text-primary-dark">October 2024</h1>
+<button class="flex h-12 w-12 shrink-0 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-text-primary-light dark:text-text-primary-dark">share</span>
+</button>
+</header>
+<main class="flex flex-1 flex-col p-4 pb-24">
+<!-- Calendar Picker -->
+<div class="flex min-w-72 max-w-[336px] flex-1 flex-col gap-0.5 mx-auto">
+<div class="flex items-center justify-between p-1">
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-sm text-text-secondary-light dark:text-text-secondary-dark">chevron_left</span>
+</button>
+<p class="flex-1 text-center text-base font-bold leading-tight text-text-primary-light dark:text-text-primary-dark">October 2024</p>
+<button class="flex size-10 items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-sm text-text-secondary-light dark:text-text-secondary-dark">chevron_right</span>
+</button>
+</div>
+<div class="grid grid-cols-7">
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">S</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">M</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">T</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">W</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">T</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">F</p>
+<p class="flex h-12 w-full items-center justify-center pb-0.5 text-[13px] font-bold leading-normal tracking-[0.015em] text-text-secondary-light dark:text-text-secondary-dark">S</p>
+<button class="col-start-3 h-12 w-full text-sm font-medium leading-normal text-text-secondary-light dark:text-text-secondary-dark opacity-50"><div class="flex size-full items-center justify-center rounded-full">1</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>2</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">3</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>4</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">5</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">6</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">7</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>8</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">9</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">10</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">11</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">12</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>13</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">14</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">15</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">16</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">17</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">18</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">19</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">20</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">21</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>22</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">23</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">24</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="relative flex size-full items-center justify-center rounded-full"><span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>25</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark">
+<div class="relative flex size-full items-center justify-center rounded-full ring-2 ring-primary">
+<span class="absolute bottom-2 h-1 w-1 rounded-full bg-primary/50"></span>
+                            26
+                        </div>
+</button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">27</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">28</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">29</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">30</div></button>
+<button class="h-12 w-full text-sm font-medium leading-normal text-text-primary-light dark:text-text-primary-dark"><div class="flex size-full items-center justify-center rounded-full">31</div></button>
+</div>
+</div>
+<!-- Daily Log Card -->
+<div class="mt-6 w-full rounded-xl bg-card-light dark:bg-card-dark p-4">
+<h2 class="px-2 pb-4 pt-1 text-[22px] font-bold leading-tight tracking-[-0.015em] text-text-primary-light dark:text-text-primary-dark">Log for October 26, 2024</h2>
+<div class="flex flex-col gap-2">
+<!-- Mood -->
+<div class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-lg bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">sentiment_satisfied</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-text-primary-light dark:text-text-primary-dark">Mood</p>
+</div>
+<div class="shrink-0">
+<p class="text-base font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Happy, Stressed</p>
+</div>
+</div>
+<!-- Symptoms -->
+<div class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-lg bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">coronavirus</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-text-primary-light dark:text-text-primary-dark">Symptoms</p>
+</div>
+<div class="shrink-0">
+<p class="text-base font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Redness, Breakout</p>
+</div>
+</div>
+<!-- Triggers -->
+<div class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-lg bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">local_fire_department</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-text-primary-light dark:text-text-primary-dark">Triggers</p>
+</div>
+<div class="shrink-0">
+<p class="text-base font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Lack of Sleep, Diet</p>
+</div>
+</div>
+<!-- Skin Feel -->
+<div class="flex min-h-14 cursor-pointer items-center justify-between gap-4 rounded-lg bg-background-light dark:bg-background-dark px-4 transition-colors hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-primary/20 text-primary">
+<span class="material-symbols-outlined">touch_app</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-text-primary-light dark:text-text-primary-dark">Skin Feel</p>
+</div>
+<div class="shrink-0">
+<p class="text-base font-normal leading-normal text-text-secondary-light dark:text-text-secondary-dark">Oily, Tight</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Empty State Example -->
+<div class="mt-6 flex flex-col items-center justify-center text-center text-text-secondary-light dark:text-text-secondary-dark p-8 rounded-xl bg-card-light dark:bg-card-dark">
+<h3 class="text-lg font-semibold text-text-primary-light dark:text-text-primary-dark">No Log for October 27</h3>
+<p class="mt-2 max-w-xs text-sm">Tap the '+' to log your skin's condition for today.</p>
+</div>
+</main>
+<!-- Floating Action Button -->
+<div class="pointer-events-none fixed inset-x-0 bottom-0 z-20 flex justify-center p-6">
+<button class="pointer-events-auto flex h-14 items-center justify-center gap-3 rounded-full bg-primary px-6 text-base font-bold text-white shadow-lg transition-transform hover:scale-105 active:scale-95">
+<span class="material-symbols-outlined">edit</span>
+<span>Edit Entry</span>
+</button>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Product Search</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {primary: "#24543A", "background-light": "#f6f7f7", "background-dark": "#151d19", "text-light": "#212121", "text-dark": "#E0E0E0", "subtext-light": "#616161", "subtext-dark": "#BDBDBD", "accent-light": "#B2DFDB", "accent-dark": "#004d40", "border-light": "#E0E0E0", "border-dark": "#424242"}, fontFamily: {display: "Inter"}, borderRadius: {DEFAULT: "0.5rem", lg: "1rem", xl: "1.5rem", full: "9999px"}}}};</script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    .material-symbols-outlined.fill {
+      font-variation-settings:
+      'FILL' 1,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="flex flex-col flex-grow">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10 border-b border-border-light dark:border-border-dark">
+<div class="flex size-12 shrink-0 items-center justify-start text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</div>
+<h1 class="text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Add to Routine</h1>
+<div class="w-12"></div>
+</header>
+<main class="flex-grow p-4">
+<p class="mb-6 text-center text-base text-subtext-light dark:text-subtext-dark">Recommended products for your <span class="font-semibold text-primary">AM Hydration</span> routine.</p>
+<section class="mb-8">
+<h2 class="text-xl font-bold mb-4">Cleansers</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="aspect-[3/4] bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-subtext-light dark:text-subtext-dark">photo</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="font-semibold text-sm leading-tight mb-1">Gentle Milky Cleanser</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark mb-3 flex-grow">The Inkey List</p>
+<div class="flex items-center gap-2">
+<button class="flex-grow h-9 flex items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add</span>
+</button>
+<button class="size-9 flex-shrink-0 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-primary">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="aspect-[3/4] bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-subtext-light dark:text-subtext-dark">photo</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="font-semibold text-sm leading-tight mb-1">Hydrating Cleanser</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark mb-3 flex-grow">CeraVe</p>
+<div class="flex items-center gap-2">
+<button class="flex-grow h-9 flex items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add</span>
+</button>
+<button class="size-9 flex-shrink-0 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-primary">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="mb-8">
+<h2 class="text-xl font-bold mb-4">Moisturizers</h2>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="aspect-[3/4] bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-subtext-light dark:text-subtext-dark">photo</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="font-semibold text-sm leading-tight mb-1">Hydro Boost Water Gel</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark mb-3 flex-grow">Neutrogena</p>
+<div class="flex items-center gap-2">
+<button class="flex-grow h-9 flex items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add</span>
+</button>
+<button class="size-9 flex-shrink-0 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-primary">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-col rounded-xl border border-border-light dark:border-border-dark overflow-hidden">
+<div class="aspect-[3/4] bg-gray-200 dark:bg-gray-700 flex items-center justify-center">
+<span class="material-symbols-outlined text-4xl text-subtext-light dark:text-subtext-dark">photo</span>
+</div>
+<div class="p-3 flex flex-col flex-grow">
+<h3 class="font-semibold text-sm leading-tight mb-1">Ultra Facial Cream</h3>
+<p class="text-xs text-subtext-light dark:text-subtext-dark mb-3 flex-grow">Kiehl's</p>
+<div class="flex items-center gap-2">
+<button class="flex-grow h-9 flex items-center justify-center gap-2 rounded-full bg-primary text-white text-sm font-semibold">
+<span class="material-symbols-outlined text-lg">add</span>
+<span>Add</span>
+</button>
+<button class="size-9 flex-shrink-0 flex items-center justify-center rounded-full border border-border-light dark:border-border-dark text-primary">
+<span class="material-symbols-outlined text-xl">smart_toy</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+<footer class="sticky bottom-0 z-10">
+<div class="flex gap-2 border-t border-border-light dark:border-border-dark bg-background-light dark:bg-background-dark px-4 pb-3 pt-2">
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-subtext-light dark:text-subtext-dark" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">home</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Home</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="flex h-8 w-16 items-center justify-center rounded-full bg-accent-light dark:bg-accent-dark">
+<span class="material-symbols-outlined text-2xl fill">checklist</span>
+</div>
+<p class="text-xs font-bold leading-normal tracking-[0.015em]">Routine</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-subtext-light dark:text-subtext-dark" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">widgets</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Hub</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-subtext-light dark:text-subtext-dark" href="#">
+<div class="flex h-8 items-center justify-center">
+<span class="material-symbols-outlined text-2xl">person</span>
+</div>
+<p class="text-xs font-medium leading-normal tracking-[0.015em]">Profile</p>
+</a>
+</div>
+</footer>
+</div>
+</body></html>

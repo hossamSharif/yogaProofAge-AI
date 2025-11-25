@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skincare Routine Player</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+<style type="text/tailwindcss">
+    @tailwind base;
+    @tailwind components;
+    @tailwind utilities;
+    body {
+        font-family: 'Inter', sans-serif;
+    }
+    .material-symbols-outlined {
+      font-variation-settings:
+      'FILL' 0,
+      'wght' 400,
+      'GRAD' 0,
+      'opsz' 24
+    }
+  </style>
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "deep-green": "#24543A",
+            "muted-gold": "#C8A55A",
+            "off-white": "#F4F0E8",
+            "charcoal-text": "#1E1E1E",
+            "warm-grey": "#6F6A61",
+          },
+          fontFamily: {
+            sans: ["Inter", "sans-serif"],
+          },
+          borderRadius: {
+            DEFAULT: "0.5rem",
+            lg: "1rem",
+            xl: "1.5rem",
+            full: "9999px"
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-off-white font-sans">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<header class="sticky top-0 z-10 bg-off-white/80 backdrop-blur-lg pt-safe-top">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="flex size-12 shrink-0 items-center justify-start">
+<button class="flex items-center justify-center size-10 text-charcoal-text">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+</div>
+<h2 class="text-deep-green text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Morning Routine</h2>
+<div class="flex w-12 items-center justify-end">
+<button class="flex items-center justify-center size-10 text-charcoal-text">
+<span class="material-symbols-outlined text-2xl">volume_up</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col gap-3 px-4">
+<div class="flex gap-6 justify-between">
+<p class="text-warm-grey text-sm font-medium leading-normal">Step 3 of 5</p>
+<p class="text-warm-grey text-sm font-normal leading-normal">10:00 AM</p>
+</div>
+<div class="w-full rounded-full bg-warm-grey/20 h-2"><div class="h-2 rounded-full bg-deep-green" style="width: 60%;"></div></div>
+</div>
+</header>
+<main class="flex-1">
+<div class="p-4">
+<div class="relative flex items-center justify-center bg-slate-200 bg-cover bg-center aspect-video rounded-xl overflow-hidden p-4" data-alt="A woman with hair tied back gently massaging her cheek with a Gua Sha tool in a well-lit, serene bathroom setting." style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDqddTX_SPrq7TKNVReBY1GngFs57aaB-q3tBRJ5b0tHAg-lXj7RNGjzA-mUfrPEJBJIeoSZhMnWtj-iO0o-jrGN_wFadVhqCIWynAyRrbfdGtKS2HUB6pRN2kaI-CIK8zL0-PNMnAIlArtKKv0pbw2dTusPDf7pUCLU8a9PYPxWk3WaCtQ9q4dp8gNJdKtzIO00mKWV5-bW-F-1EqH_V_vkEs5gfbajTUKMlpC-jMnYdumVt3rlmy_MQGTKdkpN8dWhnNztGfKtMOS");'>
+<button class="flex shrink-0 items-center justify-center rounded-full size-16 bg-off-white/20 text-muted-gold backdrop-blur-md ring-1 ring-muted-gold/30 transition-transform hover:scale-105 focus-visible:ring-2 focus-visible:ring-muted-gold focus-visible:ring-offset-2 focus-visible:ring-offset-off-white">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+<div class="absolute inset-x-0 bottom-0 px-4 py-3 bg-black/10 backdrop-blur-sm">
+<div class="flex h-4 items-center justify-center gap-1">
+<div class="h-1 flex-1 rounded-full bg-white/70"></div>
+<div class="relative"><div class="absolute -translate-x-1/2 -top-1.5 size-3 rounded-full bg-white ring-2 ring-black/20"></div></div>
+<div class="h-1 flex-1 rounded-full bg-white/30"></div>
+</div>
+<div class="flex items-center justify-between mt-1">
+<p class="text-white text-xs font-medium leading-normal tracking-[0.015em]">0:37</p>
+<p class="text-white text-xs font-medium leading-normal tracking-[0.015em]">2:23</p>
+</div>
+</div>
+</div>
+</div>
+<h1 class="text-charcoal-text tracking-tight text-[32px] font-bold leading-tight px-4 text-left pb-1 pt-4">Gua Sha Sculpting</h1>
+<p class="text-warm-grey text-sm font-medium leading-normal pb-3 px-4">5 min</p>
+<div class="flex flex-col gap-6 px-4 pb-32">
+<div>
+<h3 class="text-deep-green text-lg font-bold mb-2">How-To</h3>
+<p class="text-charcoal-text text-base leading-relaxed">
+                        Begin with a clean face and apply a few drops of facial oil to help the tool glide smoothly. Holding the gua sha tool at a 15-degree angle to the skin, gently scrape in an upward and outward motion. Start from the center of your face and move towards your hairline. Repeat each stroke 3-5 times.
+                    </p>
+</div>
+<div>
+<h3 class="text-deep-green text-lg font-bold mb-3">Pro Tips</h3>
+<ul class="space-y-3">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-muted-gold text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-charcoal-text text-base leading-relaxed">Always use gentle pressure; the goal is to massage, not to cause discomfort.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-muted-gold text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-charcoal-text text-base leading-relaxed">Drink a glass of water after your session to help flush out toxins.</span>
+</li>
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-muted-gold text-xl mt-0.5" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-charcoal-text text-base leading-relaxed">Don't forget the neck area! Scrape from the collarbone upwards to the jawline.</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-deep-green text-lg font-bold mb-3">Recommended Products</h3>
+<div class="flex items-center gap-4 rounded-xl bg-white/60 p-4 shadow-sm ring-1 ring-black/5">
+<img alt="A small brown glass dropper bottle with a black top, labeled 'Facial Oil'." class="size-16 rounded-lg object-cover bg-slate-300" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYSzCzP7-mXFOm2qUDvlySMGNZ4zmta-3_QW8z1WzpnGgaHX3JrwN9D3c9N_y4wp2GOH19Bs9nmdaZssHzVLTvyiwCFwF7DI3tBRho-llfT0_or7yoZ9a7RK-Xf97KQNbFrrT7g6Ao5tlJluiv4Syrx-ROtFmPgUvxUOyQBY-2XntvzTjDdnR7Fl2M0quhzVBYILLta7YfoOf4CupxJ0aVKHCSq3Jj7vZ3xLYG1Qriux3EHh02R5tGa5357ewshkXm0Tg9pIrQtATL"/>
+<div class="flex-1">
+<p class="text-charcoal-text font-semibold">Nourishing Facial Oil</p>
+<p class="text-warm-grey text-sm">Aura Botanics</p>
+</div>
+<button class="flex items-center justify-center size-10 rounded-full text-warm-grey hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 z-10 p-4 bg-gradient-to-t from-off-white via-off-white to-transparent pb-safe-bottom">
+<div class="grid grid-cols-2 gap-3">
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-transparent text-deep-green border-2 border-deep-green text-base font-bold leading-normal tracking-[0.015em] transition-colors hover:bg-deep-green/10 focus-visible:ring-2 focus-visible:ring-muted-gold focus-visible:ring-offset-2 focus-visible:ring-offset-off-white">Skip Step</button>
+<button class="flex w-full cursor-pointer items-center justify-center overflow-hidden rounded-full h-14 bg-deep-green text-off-white text-base font-bold leading-normal tracking-[0.015em] transition-transform hover:scale-105 shadow-lg shadow-deep-green/20 focus-visible:ring-2 focus-visible:ring-muted-gold focus-visible:ring-offset-2 focus-visible:ring-offset-deep-green">Mark as Complete</button>
+</div>
+</footer>
+</div>
+
+</body></html>

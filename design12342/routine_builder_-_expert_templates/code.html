@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Expert Routines</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<style type="text/tailwindcss">
+        @tailwind base;
+        @tailwind components;
+        @tailwind utilities;
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .material-symbols-outlined {
+          font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24
+        }
+    </style>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'deep-green': '#24543A',
+                        'muted-gold': '#C8A55A',
+                        'off-white': '#F4F0E8',
+                        'charcoal-text': '#1E1E1E',
+                        'warm-grey': '#6F6A61',
+                    },
+                    fontFamily: {
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.75rem", // 12px
+                        lg: "1rem", // 16px
+                        xl: "1.5rem", // 24px
+                        full: "9999px"
+                    },
+                    boxShadow: {
+                        'glass': '0 4px 12px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.03)',
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-off-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center justify-between p-4 pb-2 bg-off-white/80 backdrop-blur-sm">
+<button class="text-charcoal-text flex size-10 shrink-0 items-center justify-center rounded-full hover:bg-black/5 transition-colors">
+<span class="material-symbols-outlined">arrow_back</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-charcoal-text">Expert Routines</h1>
+<div class="size-10 shrink-0"></div>
+</header>
+<main class="flex-1">
+<p class="px-4 pt-1 pb-3 text-base font-normal leading-normal text-warm-grey">Find a routine designed by experts for your skin goals.</p>
+<div class="px-4 py-3">
+<label class="flex flex-col h-12 w-full min-w-40">
+<div class="flex h-full w-full flex-1 items-stretch rounded-xl bg-white/60 ring-1 ring-inset ring-warm-grey/20">
+<div class="flex items-center justify-center pl-4 text-warm-grey">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl border-none bg-transparent px-2 text-base font-normal leading-normal text-charcoal-text placeholder:text-warm-grey focus:outline-0 focus:ring-2 focus:ring-inset focus:ring-muted-gold" placeholder="Search routines or experts" value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-4 py-3 overflow-x-auto">
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-deep-green pl-4 pr-4">
+<p class="text-off-white text-sm font-medium leading-normal">All</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/60 pl-4 pr-4 ring-1 ring-inset ring-warm-grey/20">
+<p class="text-charcoal-text text-sm font-medium leading-normal">For Oily Skin</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/60 pl-4 pr-4 ring-1 ring-inset ring-warm-grey/20">
+<p class="text-charcoal-text text-sm font-medium leading-normal">Anti-Aging</p>
+</div>
+<div class="flex h-8 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white/60 pl-4 pr-4 ring-1 ring-inset ring-warm-grey/20">
+<p class="text-charcoal-text text-sm font-medium leading-normal">Hydration</p>
+</div>
+</div>
+<div class="space-y-4 p-4">
+<div class="flex flex-col items-stretch justify-start overflow-hidden rounded-xl bg-off-white shadow-glass ring-1 ring-black/5">
+<div class="relative grid grid-cols-2 gap-2 aspect-[16/10] w-full bg-white/30 p-2">
+<div class="relative col-span-1 rounded-lg bg-off-white flex flex-col items-center justify-center gap-2 p-2">
+<img alt="Face yoga illustration" class="w-2/3 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7y02SGkGWifv1PODMEH22s4Ivt49z6EqwnHhPd0P2_xJmYewlQyp31QPZrnjbzCO2h3wzc02dX7F86RNQo3ZnKs7gYFU36AURSqX2FKNQhPD7h6gb3wF-jK4FFcoUp-38KuzdTk28XFdKG9MhPnGEzswsCVGSaiCNAWcVZsh5bsf3Oso3bmXbUHwJYRGJrKWNVzF1vLHvrqISm-4cXQXYv_8OGuyoLWTg4LBNqCu2Kck6sPtx2NayJ55XXZQBXJ-YWNrkqe6hnQuj"/>
+<div class="absolute bottom-2 right-2 flex items-center justify-center rounded-full bg-deep-green/10 backdrop-blur-sm px-2 py-0.5">
+<span class="text-xs font-bold text-deep-green">Sesh 1</span>
+</div>
+</div>
+<div class="col-span-1 grid grid-cols-2 grid-rows-2 gap-2">
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC01hwNtci4NvL9tsagFDsGZDxGuCilQxXIc_hgyurAL4bKc82mDxLKq05qfHExg2mcpcsTTCGyx_khzpViVvpuRWAepNAosPVkObv7wjVA-DZLyKaySqFBPWkXsUGD2NhqZphhaevdukzYYzpE7HbSUddXa-UG04cy4nJfrgh7hFs1Lo4W56DWt3vCN1u49AWxkUsOSokbooqM4EtXPm5UV7VEBC6-HZytltj9LrYWtboWi7GC1q-sXqY7Iw38j7x0BkdACNhpwcjz"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD475auHyaDcRPb6iIpfUFe-O3NhY8k6TtR9Q7cltsE8ht5VZzYA01ODOL5CeMxMwjG5Uu5fEz7OkJ3XSXgS3jxZ_MIl8QVY44lYt3U0EYapDlFTwAhipY7JkNxRwpm1tomsU2dRAEOFaZBV6RkEpHCQ3m04uHd8L9sQF9-TpUixqpkp_iRS8DZSkjjNwLiLdLGM6xf5bIosq16LFvc9R7BecBpX47BPGghEtLqluZMxMHz9eEGZe0uDohMjnPfQHEznY2LMsfMZiH_"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNhP2nQEAZwCoBuXR_8G2nPSq9AkBQ-KXIqW_Zo55XLboriyhi9snxxUCcqwTDilCMRDfxNikMm-tTVE8z0TL2c5durM3oWMQPKgAbj2IspFBcdCbyQBUn9L3hoQN6w5U1HsXh8OYlbUBuxBudSZ4fdPtADcLOmemepZtTXmqi9_CKupmGi1vKtp7lL8Uj-UZZAW14oSLjNJ4KbMqxDWFgbwZoHpxIC-XHUz8kkMYNbT-xi0jCf5jcKQsxUOMa1yN8-t-6a9XTO03y"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCLcBRl7BvUtTyJ0IMNWoUZs_4C1RoHx92sPYVn5nh7WyFY938WrLlYMk5G_vFnE4fmTaLX2yOuhHk4WtrM8_s3zt6itM-zML0-YrQPN3TOxChy3kXs2EaMAGDkGptgm_JHrzPB0wGXxZ1uBD3LZ7wMYQWayqA0zpM586y_AXLG86QSfHNEMeIV1B9iK5oQj2c4qQBph-YHFMNIUHiU67obDFglRsLYDKK8ZhlKZ5FgzkPpKUKhwB4MhxS05DjbPN6l1omq1bJOsqe1"/>
+</div>
+</div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-3 p-4">
+<div class="flex items-start justify-between">
+<div class="flex-1">
+<p class="text-sm font-normal leading-normal text-warm-grey">By Natural Glow Co.</p>
+<p class="text-lg font-bold leading-tight tracking-[-0.015em] text-charcoal-text">Yoga Flow &amp; Natural Glow</p>
+</div>
+<span class="text-xs font-bold py-1 px-2.5 rounded-full bg-white/60 text-charcoal-text ring-1 ring-inset ring-warm-grey/20">3W</span>
+</div>
+<p class="text-base font-normal leading-normal text-warm-grey">A holistic routine combining face yoga with organic products for elasticity.</p>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-xs font-medium py-1 px-2.5 rounded-full bg-white/60 text-warm-grey ring-1 ring-inset ring-warm-grey/20">Morning</span>
+<span class="text-xs font-medium py-1 px-2.5 rounded-full bg-white/60 text-warm-grey ring-1 ring-inset ring-warm-grey/20">Holistic</span>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 mt-2 self-start bg-deep-green text-off-white text-sm font-medium leading-normal transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-off-white focus:ring-muted-gold">
+<span class="truncate">View Routine</span>
+</button>
+</div>
+</div>
+<div class="flex flex-col items-stretch justify-start overflow-hidden rounded-xl bg-off-white shadow-glass ring-1 ring-black/5">
+<div class="relative grid grid-cols-2 gap-2 aspect-[16/10] w-full bg-white/30 p-2">
+<div class="relative col-span-1 rounded-lg bg-off-white flex flex-col items-center justify-center gap-2 p-2">
+<img alt="Face yoga illustration" class="w-2/3 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDR2_FXKg_nxsDBQHq5r6Nkq1xg_7YAGrD_zzfZyaBnKRKKwGi7luVD6hNRsVkwvpGt7TCAd1qQnTHGQpqequNZahFZyMMw1wAsFiu6ybKLUhpz-ZHh43JP5TM_Kvj2Zp_YrqhDtNFh9d4ufNqBr2Q0mtg5tuIq0E3iTBdrvIel1I8WBns8wyOyZ_o_xetgAzixBjBNVRU2xnDu6mEElHjtjgiyEj_hUEpggbzd0n7kim4Cl83iAIlXNOjRnQuNIuY8tO2iReNOZl_0"/>
+<div class="absolute bottom-2 right-2 flex items-center justify-center rounded-full bg-deep-green/10 backdrop-blur-sm px-2 py-0.5">
+<span class="text-xs font-bold text-deep-green">Sesh 2</span>
+</div>
+</div>
+<div class="col-span-1 grid grid-cols-2 grid-rows-2 gap-2">
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAepm22yr5XoJM6tju5BxkiJ5mQpNRTdCG670Q3N1NXdWUOEoramWpup-G58-RFhUMw8NP9EFi_GFog5oseBi4j_DjRdgI0UwvzOGrHXCDYAJ16APivqr57za2njaroCsBvvEhFvxD03l_h9SiF4iCIRXLge8bZH229RG0it5l5SZasiZObS5VfZZfDpkRUvfZ5p730CQCgcH9FNSzcg96w9Hnk4ifPo7j2UzC315u6qA93e9wqfDOp5EO6fne9jdC1yBhik1MPX87w"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC33hIg6R4wESHXAEQQvY22gh2CIby09RQjDdRBxCRIafHoptCc-ZAOFf0SGYyCvdHoxR5Ogmuouq2eeqyJmmjViRvFoyWD0SzcECLn0PtJf7fUpOlxTHOm_n-SAtARrO19Jqx7pFygOd8yU_5el6-H4AvbbwAGHuyTwfse7YxzeqKDMLyzWfnuwTmR7El7CoFlL4VbvyKC4DbRLJehWsJNUM6iToBgFZI92fPzPL6tgjl66fJpYAoyXZ1ZBQroHCtsmRccyhuOmsB4"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB6Y2aOZM00SNZNQm0Tz8DTpl5bFfYFmQ7LqC9CxxcDwFMtvrwXJpPHPd7_D2dZFB8G5R0bPFUfrP4RpT34MQjBtDUWuBfd215aQ3TK_wGbwd0BF0yyk6ZaNno76oEtXZDkeuGKVOOlR2gX40CxVGcagidT_3iZec241Tb9A90Vx-f6TLxhV35JJa4rIYDcf5eg7MHD89I_rOiFRerrL8wi35JCn-tVS-3tRmUI45od9Xk_KmmyvMGYAbTjWEtBB2Sj7MUe0Ju4QnZ5"/>
+</div>
+<div class="bg-off-white rounded-lg flex items-center justify-center p-1">
+<img alt="Skincare product" class="max-h-full max-w-full object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAefGP41Fb8CDkmK-IorV0lDEvSp8CzsiLYDQcXTLgTK3iT_jleBHbRuIfZ-SCha4h6UyIkHIma7AzJVPLBrG86bn3k2tDUd04yN-wArfnYq2eA4yYpSNNCCR5Gl5ne1A6wfqC8YdxDQSCKtgTczndMuMnVhxsKLl5Y-xhRP1N4rOAb7aGL14J963zukfgvhODfBJSSe0ixJuHhwh-fHV4bgnFXN0AuIqC7xR5ux_VctF_Os0CosQ_q5VQEb7TzetLtiPpI6zX36wJg"/>
+</div>
+</div>
+</div>
+<div class="flex w-full min-w-72 grow flex-col items-stretch justify-center gap-3 p-4">
+<div class="flex items-start justify-between">
+<div class="flex-1">
+<p class="text-sm font-normal leading-normal text-warm-grey">By Aura Botanics</p>
+<p class="text-lg font-bold leading-tight tracking-[-0.015em] text-charcoal-text">Sculpt &amp; Soothe Ritual</p>
+</div>
+<span class="text-xs font-bold py-1 px-2.5 rounded-full bg-white/60 text-charcoal-text ring-1 ring-inset ring-warm-grey/20">4W</span>
+</div>
+<p class="text-base font-normal leading-normal text-warm-grey">Define facial contours and calm your skin with this mindful practice.</p>
+<div class="flex items-center gap-2 flex-wrap">
+<span class="text-xs font-medium py-1 px-2.5 rounded-full bg-white/60 text-warm-grey ring-1 ring-inset ring-warm-grey/20">Evening</span>
+<span class="text-xs font-medium py-1 px-2.5 rounded-full bg-white/60 text-warm-grey ring-1 ring-inset ring-warm-grey/20">Soothing</span>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 mt-2 self-start bg-deep-green text-off-white text-sm font-medium leading-normal transition-transform active:scale-95 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-off-white focus:ring-muted-gold">
+<span class="truncate">View Routine</span>
+</button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

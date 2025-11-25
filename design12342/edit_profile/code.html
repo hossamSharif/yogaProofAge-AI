@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Edit Profile - Skincare App</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A6357", // Deep Green
+            "secondary": "#B48F5B", // Muted Gold
+            "background-light": "#F8F5F2", // Off-White
+            "text-light": "#333333", // Charcoal Text
+            "subtle-light": "#E5E1DC", // Warm Grey
+            "surface-light": "#FFFFFF",
+            "background-dark": "#1A1A1A",
+            "text-dark": "#F8F5F2",
+            "subtle-dark": "#404040",
+            "surface-dark": "#2A2A2A",
+          },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.75rem",
+            "lg": "1rem",
+            "xl": "1.5rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 44px;
+      height: 24px;
+    }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #E5E1DC;transition: .4s;
+      border-radius: 24px;
+    }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 20px;
+      width: 20px;
+      left: 2px;
+      bottom: 2px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+    input:checked + .slider {
+      background-color: #4A6357;}
+    input:checked + .slider:before {
+      transform: translateX(20px);
+    }
+    .dark .slider {
+      background-color: #404040;}
+    .dark input:checked + .slider {
+      background-color: #B48F5B;}
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="sticky top-0 z-10 flex h-16 items-center bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm px-4 justify-between">
+<button class="text-text-light dark:text-text-dark flex size-10 shrink-0 items-center justify-center rounded-full">
+<span class="material-symbols-outlined text-2xl">arrow_back</span>
+</button>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Edit Profile</h1>
+<div class="size-10 shrink-0"></div>
+</header>
+<main class="flex-1 flex flex-col">
+<div class="flex p-4 pt-6 @container">
+<div class="flex w-full flex-col gap-4 items-center">
+<div class="flex gap-4 flex-col items-center">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full h-32 w-32" data-alt="User's profile picture, an abstract circular gradient" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD1xEy4j6iDdQfIpYhZaVr4gXVd5ieNBbjMSmDegtiRT1GQZ46Aw4VL3lhxhDcP4CG80h_AMOhtib_sdiSWHxTVJ-M_lPO_knrfuE1WSqZYvb-r75LqeRqmLzRl6OnCNl8vgNdSyCTKoL31evmokRQ7HA8cVdGB0TlfOaTWbcjukVDao32mVE5wdR6-_NR-anYqrSicLIWyug6O98DuVa0bwwIuFh19XrRkagp-2whW8y8zFQ9RXDQXafHL_1mZIyYpXLLbY8vyO6X1");'></div>
+<div class="flex flex-col items-center justify-center">
+<p class="text-text-light dark:text-text-dark text-[22px] font-bold leading-tight tracking-[-0.015em] text-center">Aria Smith</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-base font-normal leading-normal text-center">arias@email.com</p>
+</div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 bg-secondary/20 text-secondary text-sm font-bold leading-normal tracking-[0.015em] w-full max-w-[480px] @[480px]:w-auto">
+<span class="truncate">Change Photo</span>
+</button>
+</div>
+</div>
+<div class="px-4">
+<hr class="border-t border-subtle-light dark:border-subtle-dark my-4"/>
+</div>
+<section class="flex flex-col">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">Personal Details</h3>
+<div class="flex flex-col gap-1">
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Full Name</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-light dark:text-text-dark focus:outline-0 border border-subtle-light dark:border-subtle-dark bg-surface-light dark:bg-surface-dark focus:border-secondary focus:ring-2 focus:ring-secondary/40 h-14 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 p-[15px] text-base font-normal leading-normal" value="Aria Smith"/>
+</label>
+</div>
+<div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
+<label class="flex flex-col min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Email Address</p>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-text-light dark:text-text-dark focus:outline-0 border border-subtle-light dark:border-subtle-dark bg-surface-light dark:bg-surface-dark focus:border-secondary focus:ring-2 focus:ring-secondary/40 h-14 placeholder:text-text-light/50 dark:placeholder:text-text-dark/50 p-[15px] text-base font-normal leading-normal" value="arias@email.com"/>
+</label>
+</div>
+</div>
+</section>
+<div class="px-4">
+<hr class="border-t border-subtle-light dark:border-subtle-dark my-4"/>
+</div>
+<section class="flex flex-col">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">My Skin Profile</h3>
+<div class="flex flex-col gap-3 px-4 py-3">
+<div class="flex flex-col w-full min-w-40 flex-1">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Skin Type</p>
+<div class="flex items-center justify-between rounded-xl border border-subtle-light dark:border-subtle-dark bg-surface-light dark:bg-surface-dark h-14 p-[15px]">
+<p class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal">Oily, Sensitive</p>
+<button class="text-secondary text-sm font-bold">Retake Quiz</button>
+</div>
+</div>
+<div class="flex flex-col w-full min-w-40 flex-1 pt-3">
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal pb-2">Skin Goals</p>
+<div class="flex flex-wrap gap-2">
+<button class="cursor-pointer rounded-full h-9 px-4 text-sm font-medium bg-primary text-background-light dark:text-background-dark">Reduce Acne</button>
+<button class="cursor-pointer rounded-full h-9 px-4 text-sm font-medium bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark border border-subtle-light dark:border-subtle-dark">Brighten Skin</button>
+<button class="cursor-pointer rounded-full h-9 px-4 text-sm font-medium bg-primary text-background-light dark:text-background-dark">Anti-Aging</button>
+<button class="cursor-pointer rounded-full h-9 px-4 text-sm font-medium bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark border border-subtle-light dark:border-subtle-dark">Hydration</button>
+<button class="cursor-pointer rounded-full h-9 px-4 text-sm font-medium bg-surface-light dark:bg-surface-dark text-text-light dark:text-text-dark border border-subtle-light dark:border-subtle-dark">Even Tone</button>
+</div>
+</div>
+</div>
+</section>
+<div class="px-4">
+<hr class="border-t border-subtle-light dark:border-subtle-dark my-4"/>
+</div>
+<section class="flex flex-col">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">Notification Preferences</h3>
+<div class="flex flex-col gap-2 px-4 py-3">
+<div class="flex items-center justify-between py-2">
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Routine Reminders</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm">Get notified for morning &amp; evening routines.</p>
+</div>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Tips &amp; Articles</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm">Receive personalized skincare advice.</p>
+</div>
+<label class="switch">
+<input checked="" type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+<div class="flex items-center justify-between py-2">
+<div>
+<p class="text-text-light dark:text-text-dark text-base font-medium leading-normal">Product Recommendations</p>
+<p class="text-text-light/70 dark:text-text-dark/70 text-sm">New products that match your skin profile.</p>
+</div>
+<label class="switch">
+<input type="checkbox"/>
+<span class="slider"></span>
+</label>
+</div>
+</div>
+</section>
+<div class="px-4">
+<hr class="border-t border-subtle-light dark:border-subtle-dark my-4"/>
+</div>
+<section class="flex flex-col">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-2">Account</h3>
+<div class="px-4 py-3">
+<button class="flex w-full items-center justify-between rounded-xl border border-subtle-light dark:border-subtle-dark bg-surface-light dark:bg-surface-dark h-14 p-[15px]">
+<p class="text-text-light dark:text-text-dark text-base font-normal leading-normal">Change Password</p>
+<span class="material-symbols-outlined text-text-light/60 dark:text-text-dark/60">arrow_forward_ios</span>
+</button>
+</div>
+</section>
+</main>
+<footer class="sticky bottom-0 z-10 w-full p-4 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm mt-8">
+<button class="flex w-full min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-14 px-4 bg-primary text-background-light dark:text-background-dark text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Save Changes</span>
+</button>
+</footer>
+</div>
+
+</body></html>

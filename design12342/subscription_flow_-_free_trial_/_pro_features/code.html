@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Upgrade Subscription</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#042f1c", // Deep Green for buttons
+                        "accent": "#c4a374", // Muted Gold for highlights
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "text-light": "#0d1b12", // Dark Charcoal
+                        "text-dark": "#e0e6e2",
+                        "card-light": "#ffffff",
+                        "card-dark": "#193525",
+                        "border-light": "#e0e6e2",
+                        "border-dark": "#2d4d3c"
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="flex items-center bg-background-light dark:bg-background-dark p-4 pb-2 justify-between sticky top-0 z-10">
+<button aria-label="Close" class="text-text-light dark:text-text-dark flex size-10 items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/5">
+<span class="material-symbols-outlined">close</span>
+</button>
+<h2 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">Upgrade to Premium</h2>
+<div class="size-10 shrink-0"></div> <!-- Spacer for centering title -->
+</div>
+<main class="flex-1">
+<!-- HeadlineText -->
+<h1 class="text-text-light dark:text-text-dark tracking-tight text-[32px] font-bold leading-tight px-4 text-center pb-2 pt-6">Unlock Your Best Skin</h1>
+<!-- BodyText -->
+<p class="text-text-light/80 dark:text-text-dark/80 text-base font-normal leading-normal pb-6 pt-1 px-6 text-center">Get unlimited access to all features and achieve your skin goals faster.</p>
+<!-- PricingCards -->
+<div class="grid grid-cols-1 gap-4 px-4 py-3">
+<!-- Annual Plan Card -->
+<div class="flex flex-1 flex-col gap-5 rounded-xl border border-accent bg-card-light dark:bg-card-dark p-6 ring-2 ring-accent">
+<div class="flex flex-col gap-1">
+<div class="flex items-center justify-between">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Annual Plan</h3>
+<p class="text-primary dark:text-white text-xs font-medium leading-normal tracking-[0.015em] rounded-full bg-accent px-3 py-1 text-center">Best Value</p>
+</div>
+<p class="flex items-baseline gap-1 text-text-light dark:text-text-dark">
+<span class="text-4xl font-black leading-tight tracking-[-0.033em]">$59.99</span>
+<span class="text-base font-bold leading-tight">/ year</span>
+</p>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70">Just $4.99 per month</p>
+</div>
+<div class="flex flex-col gap-3">
+<div class="text-[13px] font-normal leading-normal flex gap-3 items-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-primary dark:text-accent text-base">check_circle</span>
+                            Unlimited Skin Scans
+                        </div>
+<div class="text-[13px] font-normal leading-normal flex gap-3 items-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-primary dark:text-accent text-base">check_circle</span>
+                            Advanced AI Insights
+                        </div>
+<div class="text-[13px] font-normal leading-normal flex gap-3 items-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-primary dark:text-accent text-base">check_circle</span>
+                            Personalized Timeline
+                        </div>
+<div class="text-[13px] font-normal leading-normal flex gap-3 items-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-primary dark:text-accent text-base">check_circle</span>
+                            Photo Compare Tool
+                        </div>
+<div class="text-[13px] font-normal leading-normal flex gap-3 items-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-primary dark:text-accent text-base">check_circle</span>
+                            Exclusive Content
+                        </div>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] mt-2 transition-opacity hover:opacity-90">
+<span class="truncate">Start 7-Day Free Trial</span>
+</button>
+</div>
+<!-- Monthly Plan Card -->
+<div class="flex flex-1 flex-col gap-5 rounded-xl border border-border-light dark:border-border-dark bg-card-light dark:bg-card-dark p-6">
+<div class="flex flex-col gap-1">
+<h3 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight">Monthly Plan</h3>
+<p class="flex items-baseline gap-1 text-text-light dark:text-text-dark">
+<span class="text-4xl font-black leading-tight tracking-[-0.033em]">$9.99</span>
+<span class="text-base font-bold leading-tight">/ month</span>
+</p>
+</div>
+<p class="text-[13px] font-normal leading-normal text-text-light dark:text-text-dark">Includes all premium features, billed monthly.</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-4 bg-primary/20 text-primary dark:bg-accent/20 dark:text-accent text-base font-bold leading-normal tracking-[0.015em] transition-opacity hover:opacity-90">
+<span class="truncate">Upgrade Now</span>
+</button>
+</div>
+</div>
+<!-- MetaText -->
+<div class="px-4 py-8 text-center flex flex-col gap-2">
+<p class="text-text-light/60 dark:text-text-dark/60 text-xs">Payment is secure and encrypted. You can cancel your subscription at any time.</p>
+<div class="flex justify-center gap-4">
+<a class="text-text-light/80 dark:text-text-dark/80 text-sm font-medium leading-normal underline" href="#">Terms of Service</a>
+<a class="text-text-light/80 dark:text-text-dark/80 text-sm font-medium leading-normal underline" href="#">Privacy Policy</a>
+</div>
+</div>
+</main>
+</div>
+</body></html>

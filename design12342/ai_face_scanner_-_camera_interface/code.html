@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Skin Analysis</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#25563b",
+              "background-light": "#f6f7f7",
+              "background-dark": "#151d19",
+            },
+            fontFamily: {
+              "display": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            line-height: 1;
+            font-size: inherit;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="relative flex h-screen w-full flex-col group/design-root overflow-hidden">
+<!-- Live Camera View (Background) -->
+<div class="absolute inset-0 bg-cover bg-center -z-10" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5HUuOo9iYzJ0Ib8lfjyo88_vn8nHRn1uGCXV44pXdRk3Q_MlXfwU7i9GM-tYJpT8ziOzpLIw_MD-3Fuvhoc_y9vZc4SxoL4N-d9ZgBkhfMqsEgSmpeyDEXxIwUfElGk3E6cJo3QhPZdNio9a5j3xz2arN92ELjHH0Rl5-7xUnyt0VzfzSF7RBtcQ1rKURmyM4u4Nc3GQ-ue2aec1FEn-XqohUad26VNlVfs54d1o7OO2IkOe4HUWqoaiYWepg1Xx9a19olSprlx4S');">
+<div class="absolute inset-0 bg-black/20"></div>
+</div>
+<!-- Main UI Container -->
+<div class="relative flex flex-col h-full text-white">
+<!-- Top App Bar -->
+<div class="flex items-start justify-between p-4 pt-6">
+<button class="flex items-center justify-center rounded-full h-12 w-12 bg-black/30 backdrop-blur-lg">
+<span class="material-symbols-outlined text-white text-2xl">close</span>
+</button>
+<div class="flex flex-col items-center gap-2">
+<div class="flex items-center gap-2 rounded-full bg-black/30 backdrop-blur-lg px-4 py-2">
+<span class="material-symbols-outlined text-base text-teal-300">lightbulb</span>
+<p class="text-white text-sm font-medium">Good Lighting</p>
+</div>
+</div>
+<button class="flex items-center justify-center rounded-full h-12 w-12 bg-black/30 backdrop-blur-lg">
+<span class="material-symbols-outlined text-white text-2xl">info</span>
+</button>
+</div>
+<!-- Central Content -->
+<div class="flex-grow flex flex-col items-center justify-center px-4 pb-24">
+<!-- Instructional Text -->
+<div class="rounded-full bg-black/30 backdrop-blur-lg px-6 py-3">
+<p class="text-white text-base font-medium leading-normal text-center">Position your face inside the frame</p>
+</div>
+<!-- Face Outline Overlay -->
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[75vw] max-w-sm aspect-[3/4] border-2 border-white/40 border-dashed rounded-[50%] animate-pulse"></div>
+</div>
+</div>
+<!-- Camera Controls -->
+<div class="absolute bottom-0 left-0 right-0 p-4 pb-8 flex items-center justify-center bg-gradient-to-t from-black/50 to-transparent">
+<div class="flex items-center justify-center gap-6">
+<button class="flex shrink-0 items-center justify-center rounded-full size-14 bg-black/30 text-white/80 backdrop-blur-lg">
+<span class="material-symbols-outlined text-2xl">photo_library</span>
+</button>
+<button class="flex shrink-0 items-center justify-center rounded-full size-20 bg-white text-black ring-4 ring-white/50">
+<span class="material-symbols-outlined !text-4xl" style="font-variation-settings: 'FILL' 1;">scan</span>
+</button>
+<button class="flex shrink-0 items-center justify-center rounded-full size-14 bg-black/30 text-white/80 backdrop-blur-lg">
+<span class="material-symbols-outlined text-2xl">flip_camera_android</span>
+</button>
+</div>
+</div>
+</div>
+<!-- This is a placeholder for the Bottom Nav Bar that would be part of the app shell, but is not visible on this full-screen modal-like view -->
+<!-- 
+        <div class="flex gap-2 border-t border-[#eaf0ed] bg-[#f9fbfa] px-4 pb-3 pt-2">
+            ... BottomNavBar HTML would go here in a real app ...
+        </div>
+        -->
+</div>
+</body></html>

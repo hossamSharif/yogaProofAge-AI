@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Skin Analysis Results</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "off-white": "#F8F7F4",
+                        "charcoal-text": "#333333",
+                        "warm-grey": "#6B6B6B",
+                        "muted-gold": "#C1A77E",
+                        "deep-green": "#2C4A3C",
+                        "glass-border": "rgba(255, 255, 255, 0.5)",
+                        "glass-bg": "rgba(255, 255, 255, 0.3)",
+                    },
+                    fontFamily: {
+                        "display": ["Urbanist", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.5rem",
+                        "lg": "1rem",
+                        "xl": "1.5rem",
+                        "2xl": "2rem",
+                        "full": "9999px"
+                    },
+                    boxShadow: {
+                        'glass': '0 8px 32px 0 rgba(31, 38, 135, 0.1)',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-off-white font-display text-charcoal-text">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-10 flex items-center justify-between p-4 pb-2 backdrop-blur-sm bg-off-white/80">
+<div class="flex size-12 shrink-0 items-center justify-start text-charcoal-text">
+<span class="material-symbols-outlined text-3xl">arrow_back_ios_new</span>
+</div>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-tight text-charcoal-text">Your Analysis</h1>
+<div class="size-12 shrink-0"></div>
+</header>
+<main class="flex-grow pb-32">
+<div class="p-4">
+<div class="aspect-[4/3] w-full rounded-2xl bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCybulEdnCpANM3QHtpxjifeIEfRU1tWziH9qk5L2cZ9zKDbq7X4tvGdvEDHD15HYu3kACD4Mz2QaJ9fsvZObfnCbMRutqR-dABaTFgNGJlL1UsZFEDptbGsyhXAKl_EO2qW_WF1JtyaT2xEBH4_nLr3Tr8Lwx9AiCje8_IduhT02Sd2cbB26noj3RWF3DeI0Oxo8GQbv1Ecgf_02jkV1ZrUGzlG6w44Zb6A_pyHWpwHxARgfIbboHPZPGKQeOi8uxowbjG3CyxnYTt");'></div>
+</div>
+<div class="px-4">
+<div class="flex flex-col gap-4 rounded-2xl border border-glass-border bg-glass-bg p-5 shadow-glass backdrop-blur-md">
+<h2 class="text-xl font-bold text-charcoal-text">Your Skin Profile</h2>
+<div class="flex flex-col gap-3">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5 text-muted-gold">spa</span>
+<p class="text-base text-warm-grey"><strong class="font-semibold text-charcoal-text">Skin Type:</strong> Combination</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5 text-muted-gold">bubble_chart</span>
+<p class="text-base text-warm-grey"><strong class="font-semibold text-charcoal-text">Visible Concerns:</strong> Fine Lines, Dehydration, Uneven Texture</p>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined mt-0.5 text-muted-gold">auto_awesome</span>
+<p class="text-base text-warm-grey"><strong class="font-semibold text-charcoal-text">AI Summary:</strong> Our analysis indicates a combination skin type. We'll focus on boosting hydration and smoothing fine lines to enhance your skin's natural radiance.</p>
+</div>
+</div>
+</div>
+</div>
+<h2 class="px-4 pb-3 pt-6 text-[22px] font-bold tracking-tight text-charcoal-text">Key Findings</h2>
+<div class="flex flex-col gap-3 px-4">
+<div class="flex min-h-[72px] items-center gap-4 rounded-xl border border-glass-border bg-white p-4 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted-gold/10 text-muted-gold">
+<span class="material-symbols-outlined text-3xl">elderly</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-semibold leading-normal text-charcoal-text">Fine Lines</p>
+<p class="text-sm font-normal leading-normal text-warm-grey">Moderate severity around expression areas.</p>
+</div>
+<div class="flex h-2.5 w-16 overflow-hidden rounded-full bg-gray-200">
+<div class="rounded-full bg-muted-gold" style="width: 60%;"></div>
+</div>
+</div>
+<div class="flex min-h-[72px] items-center gap-4 rounded-xl border border-glass-border bg-white p-4 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted-gold/10 text-muted-gold">
+<span class="material-symbols-outlined text-3xl">water_drop</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-semibold leading-normal text-charcoal-text">Dehydration</p>
+<p class="text-sm font-normal leading-normal text-warm-grey">Mild tightness detected on cheeks.</p>
+</div>
+<div class="flex h-2.5 w-16 overflow-hidden rounded-full bg-gray-200">
+<div class="rounded-full bg-muted-gold" style="width: 45%;"></div>
+</div>
+</div>
+<div class="flex min-h-[72px] items-center gap-4 rounded-xl border border-glass-border bg-white p-4 shadow-sm">
+<div class="flex size-12 shrink-0 items-center justify-center rounded-full bg-muted-gold/10 text-muted-gold">
+<span class="material-symbols-outlined text-3xl">texture</span>
+</div>
+<div class="flex flex-1 flex-col justify-center">
+<p class="text-base font-semibold leading-normal text-charcoal-text">Uneven Texture</p>
+<p class="text-sm font-normal leading-normal text-warm-grey">Slightly rough surface on forehead and chin.</p>
+</div>
+<div class="flex h-2.5 w-16 overflow-hidden rounded-full bg-gray-200">
+<div class="rounded-full bg-muted-gold" style="width: 30%;"></div>
+</div>
+</div>
+</div>
+</main>
+<footer class="fixed bottom-0 left-0 right-0 bg-gradient-to-t from-off-white to-transparent p-4 pt-8">
+<button class="w-full rounded-full bg-deep-green px-6 py-4 text-base font-bold text-white shadow-lg shadow-deep-green/30 transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">Build My Routine</button>
+</footer>
+</div>
+
+</body></html>
