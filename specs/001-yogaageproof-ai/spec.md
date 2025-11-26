@@ -306,7 +306,7 @@ A user customizes their app experience through multi-language support, manages t
 - **FR-086**: System MUST maintain user session state across app restarts
 - **FR-087**: System MUST implement secure password recovery via email for email/password accounts
 - **FR-088**: System MUST allow users to link or unlink social authentication accounts from their profile
-- **FR-089**: System MUST handle account conflicts when a user attempts to sign in with a social account using an email already associated with an existing email/password account
+- **FR-089**: System MUST detect account conflicts when a user attempts to sign in with a social account using an email already associated with an existing email/password account, present a clear modal explaining the conflict, and offer two options: (a) link the social account to the existing account after password verification, or (b) use a different email address for the social account
 
 ### Non-Functional Requirements
 
@@ -318,16 +318,15 @@ A user customizes their app experience through multi-language support, manages t
 - **NFR-005**: App MUST cache routine content (steps, imagery, instructions) for offline playback
 
 #### Integration & External Dependencies
-- **NFR-006**: System MUST integrate with a cloud-based AI service provider for skin analysis (e.g., AWS Rekognition, Google Cloud Vision, or custom ML API)
+- **NFR-006**: System MUST integrate with Claude API (Anthropic) for all AI operations including skin analysis, routine generation, photo comparison, product insights, and routine evaluation via claude-3-5-sonnet-20241022 model
 - **NFR-007**: All photo uploads to cloud AI services MUST be transmitted over HTTPS with end-to-end encryption
 - **NFR-008**: Cloud AI API requests MUST include authentication tokens to prevent unauthorized access
 - **NFR-009**: System MUST implement rate limiting and request throttling to manage API costs
 - **NFR-010**: System MUST compress photos before uploading to cloud AI services (target: <2MB per image) without compromising analysis accuracy
-- **NFR-011**: System MUST integrate with third-party skincare product APIs (e.g., SkinStore, Sephora, or similar) for real-time product data
-- **NFR-012**: Product data from third-party APIs MUST be cached locally for performance, with cache refresh every 24 hours
-- **NFR-013**: System MUST handle product API failures gracefully by serving cached data and notifying users of potential staleness
-- **NFR-014**: Product API integration MUST support querying by category/type (cleanser, serum, etc.) and filtering by skin type/concerns
-- **NFR-015**: System MUST track product availability and pricing changes, updating recommendations when products become unavailable
+- **NFR-011**: System MUST use a curated, self-hosted product database seeded from open skincare product datasets (e.g., Open Beauty Facts, CosDNA) with initial 500-1000 products covering all routine categories, updated quarterly via manual imports
+- **NFR-012**: Product data from Supabase database MUST be cached in MMKV for offline access, with cache refresh on app startup if network available
+- **NFR-013**: System MUST handle network failures during product fetching gracefully by serving cached data with visual indicator showing last update time
+- **NFR-014**: Product records MUST include availability status field (in_stock/out_of_stock/discontinued) manually updated during quarterly imports, with UI displaying status to users
 
 #### Security & Privacy
 - **NFR-016**: Progress photos stored locally MUST use device-level encryption (iOS: Data Protection API, Android: EncryptedFile)
@@ -354,7 +353,7 @@ A user customizes their app experience through multi-language support, manages t
 #### Technical Platform & Constraints
 - **NFR-034**: App MUST be built using React Native framework for cross-platform development (iOS and Android)
 - **NFR-035**: App MUST target minimum iOS 13.0 and Android API level 23 (Android 6.0) for broad device compatibility
-- **NFR-036**: React Native version MUST be 0.72 or higher for optimal performance and latest features
+- **NFR-036**: React Native version MUST be 0.76 or higher (required by Expo SDK 52) for optimal performance and latest features
 - **NFR-037**: Native modules MAY be used where React Native libraries are insufficient (e.g., advanced camera features, device encryption)
 - **NFR-038**: App MUST use TypeScript for type safety and improved code maintainability
 - **NFR-039**: State management MUST use a proven solution (Redux, Redux Toolkit, Zustand, or React Context for simpler cases)

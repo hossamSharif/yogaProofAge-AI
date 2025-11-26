@@ -18,6 +18,8 @@ Build YogaAgeProof AI as a cross-platform mobile application using React Native 
 - React Native Reanimated 3.x (animations)
 - Expo Camera, Expo Image Picker, Expo Notifications
 - Stripe React Native SDK (payments via MCP)
+- @anthropic-ai/sdk (Claude API client)
+- Open Beauty Facts dataset (initial product seed)
 
 **Storage**:
 - Supabase PostgreSQL (user profiles, routines, diary entries, sessions, metadata)
@@ -28,6 +30,13 @@ Build YogaAgeProof AI as a cross-platform mobile application using React Native 
 **Testing**: Jest + React Native Testing Library, Detox (E2E)
 **Target Platform**: iOS 13.0+, Android API 23+ (React Native via Expo)
 **Project Type**: Mobile application (cross-platform)
+
+**AI Provider**:
+- Claude API (Anthropic) via @anthropic-ai/sdk
+- Model: claude-3-5-sonnet-20241022
+- Operations: Skin analysis, routine generation, photo comparison, product insights, routine evaluation
+- Rate limits: 50 requests/min (tier 2), implement client-side queuing
+
 **Performance Goals**:
 - AI face scan analysis < 10s
 - AI photo comparison < 15s
@@ -41,6 +50,64 @@ Build YogaAgeProof AI as a cross-platform mobile application using React Native 
 - Cloud AI API 99.5% uptime
 - Photos compressed to <2MB before upload
 - Offline routine playback required
+
+## Error Handling Strategy
+
+### AI API Failures (Claude)
+
+**Retry Logic**:
+- Max 3 retry attempts with exponential backoff (1s, 2s, 4s)
+- Retry on: Network errors, 429 rate limits, 500/502/503/504 server errors
+- No retry on: 400/401/403 (client errors), 413 (payload too large)
+
+**Fallback Behavior**:
+- **Skin Analysis**: Show error message with option to retry or upload different photo
+- **Routine Generation**: Offer pre-built template routines as fallback
+- **Photo Comparison**: Save comparison request for retry when network restored
+- **Product Insights**: Display generic product info without personalized insights
+- **Routine Evaluation**: Show basic statistics only, defer AI recommendations
+
+**User Messaging**:
+- Network errors: "Unable to connect. Check your internet connection and try again."
+- Rate limits: "Service is busy. Please wait a moment and try again."
+- Server errors: "We're experiencing technical difficulties. Please try again in a few minutes."
+- Timeout: "Analysis is taking longer than expected. Would you like to continue waiting?"
+
+### Database Failures (Supabase)
+
+**Retry Logic**:
+- Max 2 retry attempts with 1s delay
+- Retry on: Network errors, timeouts
+
+**Fallback Behavior**:
+- Read operations: Serve cached data with staleness indicator
+- Write operations: Queue locally, sync when connection restored
+- Auth operations: Show error, do not retry automatically
+
+### Storage Failures (Local/Cloud)
+
+**Photo Capture**:
+- Local save failure: Retry once, then alert user of storage issue
+- Cloud backup failure: Queue for background sync, show "Not backed up" indicator
+
+**Photo Retrieval**:
+- Local load failure: Attempt cloud restore if backup enabled
+- Cloud failure: Show locally cached photos only
+
+### Offline Mode
+
+**Supported Operations**:
+- Routine Player (with cached content)
+- View cached photos
+- Create diary entries (sync later)
+- Browse cached products
+
+**Blocked Operations** (show friendly "Requires Internet" message):
+- AI face scanning
+- Routine generation
+- Photo comparison
+- Product search
+- Account operations
 
 **Scale/Scope**:
 - ~30 screens based on design assets
@@ -121,11 +188,22 @@ src/
 │   │   ├── auth.ts
 │   │   ├── database.ts
 │   │   └── storage.ts
-│   ├── ai/                   # AI service integrations
+│   ├── ai/                   # Claude API integrations (Anthropic)
+│   │   ├── client.ts         # Claude API client wrapper
 │   │   ├── skin-analyzer.ts
-│   │   └── photo-comparison.ts
+│   │   ├── routine-generator.ts
+│   │   ├── photo-comparison.ts
+│   │   ├── product-insights.ts
+│   │   └── routine-evaluator.ts
 │   ├── notifications/        # Push notification handling
-│   └── products/             # Product API integration
+│   ├── products/             # Product database queries and caching
+│   ├── storage/              # Local/cloud storage handlers
+│   │   ├── local.ts
+│   │   ├── cloud.ts
+│   │   ├── sync.ts
+│   │   └── restore.ts
+│   └── offline/              # Offline queue management
+│       └── queue.ts
 │
 ├── stores/                   # Zustand state stores
 │   ├── auth.store.ts
