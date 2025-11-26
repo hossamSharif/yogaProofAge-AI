@@ -1,0 +1,665 @@
+# YogaAgeProof AI - AI Service API Contract
+# Branch: 001-yogaageproof-ai
+# Date: 2025-11-26
+#
+# This defines the contract for AI service interactions.
+# Implementation uses Claude API for multi-modal analysis.
+
+openapi: 3.1.0
+info:
+  title: YogaAgeProof AI Service API
+  version: 1.0.0
+  description: |
+    Internal API contract for AI-powered features in YogaAgeProof.
+    These are client-side service interfaces, not REST endpoints.
+
+paths: {}
+
+components:
+  schemas:
+    # =========================================================================
+    # Skin Analysis
+    # =========================================================================
+
+    SkinAnalysisRequest:
+      type: object
+      required:
+        - imageBase64
+        - userId
+      properties:
+        imageBase64:
+          type: string
+          format: byte
+          description: Base64-encoded JPEG image (max 2MB after compression)
+        userId:
+          type: string
+          format: uuid
+          description: User ID for context
+        existingProfile:
+          $ref: '#/components/schemas/SkinProfile'
+          description: Previous skin profile for comparison (optional)
+
+    SkinAnalysisResponse:
+      type: object
+      required:
+        - skinType
+        - concerns
+        - confidence
+      properties:
+        skinType:
+          type: string
+          enum: [oily, dry, combination, sensitive, normal]
+          description: Detected skin type
+        concerns:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkinConcern'
+          description: List of detected skin concerns
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Overall analysis confidence score
+        recommendations:
+          type: array
+          items:
+            type: string
+          description: Initial care recommendations
+        rawAnalysis:
+          type: object
+          description: Full AI response for storage
+
+    SkinConcern:
+      type: object
+      required:
+        - type
+        - severity
+      properties:
+        type:
+          type: string
+          enum:
+            - fine_lines
+            - wrinkles
+            - dark_spots
+            - uneven_texture
+            - hyperpigmentation
+            - redness
+            - dullness
+            - acne
+            - enlarged_pores
+            - dehydration
+          description: Type of skin concern
+        severity:
+          type: string
+          enum: [mild, moderate, severe]
+          description: Severity level
+        areas:
+          type: array
+          items:
+            type: string
+            enum: [forehead, eyes, cheeks, nose, chin, neck, overall]
+          description: Affected facial areas
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: Detection confidence for this concern
+
+    SkinProfile:
+      type: object
+      properties:
+        skinType:
+          type: string
+          enum: [oily, dry, combination, sensitive, normal]
+        concerns:
+          type: array
+          items:
+            $ref: '#/components/schemas/SkinConcern'
+        analysisDate:
+          type: string
+          format: date-time
+
+    # =========================================================================
+    # Routine Generation
+    # =========================================================================
+
+    RoutineGenerationRequest:
+      type: object
+      required:
+        - skinProfile
+        - userId
+      properties:
+        skinProfile:
+          $ref: '#/components/schemas/SkinProfile'
+        userId:
+          type: string
+          format: uuid
+        preferences:
+          $ref: '#/components/schemas/RoutinePreferences'
+        availableProducts:
+          type: array
+          items:
+            $ref: '#/components/schemas/ProductSummary'
+          description: Products available for suggestion
+
+    RoutinePreferences:
+      type: object
+      properties:
+        maxDurationMinutes:
+          type: integer
+          minimum: 5
+          maximum: 60
+          default: 20
+        focusAreas:
+          type: array
+          items:
+            type: string
+            enum: [anti_aging, hydration, brightening, acne, sensitivity, general]
+        timeOfDay:
+          type: string
+          enum: [morning, evening, both]
+          default: both
+
+    RoutineGenerationResponse:
+      type: object
+      required:
+        - routines
+      properties:
+        routines:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeneratedRoutine'
+          minItems: 3
+          maxItems: 5
+          description: 3-5 personalized routine options
+
+    GeneratedRoutine:
+      type: object
+      required:
+        - title
+        - focusArea
+        - estimatedDurationMinutes
+        - benefits
+        - steps
+      properties:
+        title:
+          type: string
+          maxLength: 100
+          example: "Morning Glow Routine"
+        description:
+          type: string
+          maxLength: 500
+        focusArea:
+          type: string
+          example: "Hydration & Brightening"
+        estimatedDurationMinutes:
+          type: integer
+          minimum: 5
+          maximum: 60
+        benefits:
+          type: array
+          items:
+            type: string
+          minItems: 1
+          maxItems: 5
+        steps:
+          type: array
+          items:
+            $ref: '#/components/schemas/GeneratedStep'
+          minItems: 3
+
+    GeneratedStep:
+      type: object
+      required:
+        - stepNumber
+        - stepType
+        - title
+        - instructions
+        - durationSeconds
+      properties:
+        stepNumber:
+          type: integer
+          minimum: 1
+        stepType:
+          type: string
+          enum: [face_yoga, product_application]
+        title:
+          type: string
+          maxLength: 100
+        instructions:
+          type: string
+        tips:
+          type: string
+        durationSeconds:
+          type: integer
+          minimum: 10
+          maximum: 600
+        imageUrl:
+          type: string
+          format: uri
+          description: Demo image for face yoga
+        suggestedProductCategory:
+          type: string
+          enum: [cleanser, toner, serum, moisturizer, eye_cream, treatment, sunscreen, mask, oil]
+          description: Product category for product_application steps
+        suggestedProductIds:
+          type: array
+          items:
+            type: string
+            format: uuid
+          description: Specific product suggestions
+        productAmount:
+          type: string
+          example: "pea-sized amount"
+
+    ProductSummary:
+      type: object
+      properties:
+        id:
+          type: string
+          format: uuid
+        name:
+          type: string
+        brand:
+          type: string
+        category:
+          type: string
+        skinTypes:
+          type: array
+          items:
+            type: string
+        concernsAddressed:
+          type: array
+          items:
+            type: string
+
+    # =========================================================================
+    # Photo Comparison
+    # =========================================================================
+
+    PhotoComparisonRequest:
+      type: object
+      required:
+        - beforeImageBase64
+        - afterImageBase64
+        - userId
+      properties:
+        beforeImageBase64:
+          type: string
+          format: byte
+          description: Base64-encoded before image
+        afterImageBase64:
+          type: string
+          format: byte
+          description: Base64-encoded after image
+        userId:
+          type: string
+          format: uuid
+        skinProfile:
+          $ref: '#/components/schemas/SkinProfile'
+          description: Current skin profile for context
+        timeBetweenDays:
+          type: integer
+          description: Days between photos for context
+
+    PhotoComparisonResponse:
+      type: object
+      required:
+        - changes
+        - summary
+      properties:
+        changes:
+          type: array
+          items:
+            $ref: '#/components/schemas/DetectedChange'
+        improvementMetrics:
+          type: object
+          additionalProperties:
+            type: number
+          description: Quantified improvements by category
+        summary:
+          type: string
+          description: AI-generated summary of changes
+        overallProgress:
+          type: string
+          enum: [significant_improvement, moderate_improvement, slight_improvement, no_change, slight_decline]
+
+    DetectedChange:
+      type: object
+      required:
+        - type
+        - area
+        - change
+        - confidence
+      properties:
+        type:
+          type: string
+          description: What changed (e.g., fine_lines, skin_texture)
+        area:
+          type: string
+          description: Facial area affected
+        change:
+          type: string
+          enum: [improved, reduced, increased, unchanged, worsened]
+        magnitude:
+          type: string
+          enum: [slight, moderate, significant]
+        confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        description:
+          type: string
+          description: Human-readable description
+
+    # =========================================================================
+    # Product Insights
+    # =========================================================================
+
+    ProductInsightRequest:
+      type: object
+      required:
+        - productId
+        - skinProfile
+      properties:
+        productId:
+          type: string
+          format: uuid
+        productDetails:
+          $ref: '#/components/schemas/ProductDetails'
+        skinProfile:
+          $ref: '#/components/schemas/SkinProfile'
+        currentRoutine:
+          type: array
+          items:
+            type: string
+          description: Current products in routine for interaction analysis
+
+    ProductDetails:
+      type: object
+      properties:
+        name:
+          type: string
+        brand:
+          type: string
+        ingredients:
+          type: array
+          items:
+            type: string
+        benefits:
+          type: array
+          items:
+            type: string
+
+    ProductInsightResponse:
+      type: object
+      required:
+        - suitabilityScore
+        - insights
+      properties:
+        suitabilityScore:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+          description: How suitable this product is for the user
+        insights:
+          type: array
+          items:
+            type: string
+          description: Personalized insights about the product
+        benefits:
+          type: array
+          items:
+            type: string
+          description: Benefits specific to user's skin profile
+        cautions:
+          type: array
+          items:
+            type: string
+          description: Any concerns or cautions
+        interactions:
+          type: array
+          items:
+            type: string
+          description: Interactions with other products in routine
+
+    # =========================================================================
+    # Routine Evaluation & Recommendations
+    # =========================================================================
+
+    RoutineEvaluationRequest:
+      type: object
+      required:
+        - userId
+        - sessions
+      properties:
+        userId:
+          type: string
+          format: uuid
+        sessions:
+          type: array
+          items:
+            $ref: '#/components/schemas/SessionSummary'
+          minItems: 7
+          description: At least 7 sessions required for evaluation
+        skinProfile:
+          $ref: '#/components/schemas/SkinProfile'
+        photoComparisons:
+          type: array
+          items:
+            $ref: '#/components/schemas/PhotoComparisonResponse'
+        diaryEntries:
+          type: array
+          items:
+            $ref: '#/components/schemas/DiarySummary'
+
+    SessionSummary:
+      type: object
+      properties:
+        sessionId:
+          type: string
+          format: uuid
+        completedAt:
+          type: string
+          format: date-time
+        completionRate:
+          type: number
+          format: float
+          description: Percentage of steps completed
+        totalDurationMinutes:
+          type: integer
+        stepsSkipped:
+          type: array
+          items:
+            type: string
+
+    DiarySummary:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        mood:
+          type: string
+        triggers:
+          type: array
+          items:
+            type: string
+        skinCondition:
+          type: string
+
+    RoutineEvaluationResponse:
+      type: object
+      required:
+        - overallScore
+        - recommendations
+      properties:
+        overallScore:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 100
+          description: Overall routine effectiveness score
+        consistencyScore:
+          type: number
+          format: float
+          description: Adherence consistency percentage
+        effectivenessScore:
+          type: number
+          format: float
+          description: Routine effectiveness based on results
+        recommendations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Recommendation'
+        insights:
+          type: array
+          items:
+            type: string
+          description: General insights about routine performance
+        improvementTimeline:
+          type: object
+          additionalProperties:
+            type: string
+          description: Expected improvements over time
+
+    Recommendation:
+      type: object
+      required:
+        - type
+        - title
+        - message
+      properties:
+        type:
+          type: string
+          enum: [routine_adjustment, product_suggestion, behavioral_tip]
+        title:
+          type: string
+          maxLength: 200
+        message:
+          type: string
+        priority:
+          type: string
+          enum: [high, medium, low]
+        actionable:
+          type: boolean
+          description: Whether user can act on this directly
+        suggestedAction:
+          type: string
+          description: Specific action to take
+
+    # =========================================================================
+    # Error Responses
+    # =========================================================================
+
+    AIServiceError:
+      type: object
+      required:
+        - code
+        - message
+      properties:
+        code:
+          type: string
+          enum:
+            - IMAGE_QUALITY_TOO_LOW
+            - FACE_NOT_DETECTED
+            - MULTIPLE_FACES_DETECTED
+            - IMAGE_TOO_LARGE
+            - ANALYSIS_TIMEOUT
+            - SERVICE_UNAVAILABLE
+            - RATE_LIMITED
+            - INSUFFICIENT_DATA
+        message:
+          type: string
+        retryable:
+          type: boolean
+        retryAfterSeconds:
+          type: integer
+
+  # ===========================================================================
+  # Service Interface Definitions (TypeScript-style)
+  # ===========================================================================
+
+  x-service-interfaces:
+    SkinAnalyzerService:
+      description: |
+        Service for AI-powered skin analysis.
+
+        ```typescript
+        interface SkinAnalyzerService {
+          analyzeSkin(request: SkinAnalysisRequest): Promise<SkinAnalysisResponse>;
+          validateImageQuality(imageBase64: string): Promise<ImageValidation>;
+        }
+        ```
+      methods:
+        - name: analyzeSkin
+          description: Analyze facial photo for skin type and concerns
+          timeout: 10000
+          retries: 2
+        - name: validateImageQuality
+          description: Pre-validate image before analysis
+          timeout: 2000
+
+    RoutineGeneratorService:
+      description: |
+        Service for generating personalized routines.
+
+        ```typescript
+        interface RoutineGeneratorService {
+          generateRoutines(request: RoutineGenerationRequest): Promise<RoutineGenerationResponse>;
+        }
+        ```
+      methods:
+        - name: generateRoutines
+          description: Generate 3-5 personalized routine options
+          timeout: 15000
+          retries: 1
+
+    PhotoComparisonService:
+      description: |
+        Service for comparing before/after photos.
+
+        ```typescript
+        interface PhotoComparisonService {
+          comparePhotos(request: PhotoComparisonRequest): Promise<PhotoComparisonResponse>;
+        }
+        ```
+      methods:
+        - name: comparePhotos
+          description: Compare two photos and detect changes
+          timeout: 15000
+          retries: 2
+
+    ProductInsightService:
+      description: |
+        Service for generating product insights.
+
+        ```typescript
+        interface ProductInsightService {
+          getProductInsight(request: ProductInsightRequest): Promise<ProductInsightResponse>;
+        }
+        ```
+      methods:
+        - name: getProductInsight
+          description: Get personalized product suitability insights
+          timeout: 5000
+          retries: 1
+
+    RoutineEvaluatorService:
+      description: |
+        Service for evaluating routine effectiveness.
+
+        ```typescript
+        interface RoutineEvaluatorService {
+          evaluateRoutine(request: RoutineEvaluationRequest): Promise<RoutineEvaluationResponse>;
+        }
+        ```
+      methods:
+        - name: evaluateRoutine
+          description: Evaluate routine effectiveness and generate recommendations
+          timeout: 20000
+          retries: 1
