@@ -1,0 +1,16 @@
+{
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "retry": "再試行",
+    "cancel": "キャンセル",
+    "save": "保存",
+    "delete": "削除",
+    "edit": "編集",
+    "done": "完了",
+    "next": "次へ",
+    "back": "戻る",
+    "skip": "スキップ",
+    "getStarted": "始める"
+  }
+}

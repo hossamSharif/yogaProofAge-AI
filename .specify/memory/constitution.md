@@ -1,32 +1,33 @@
 <!--
 SYNC IMPACT REPORT
 
-Version Change: 1.0.0 → 1.0.0 (Initial Ratification)
+Version Change: 1.0.0 → 1.1.0 (MINOR: New principle added)
 Ratification Date: 2025-11-26
+Last Amended: 2025-11-26
 
-Principles Defined:
-  1. MCP Tooling Mandatory - Enforce exclusive use of MCP tools for all designated operations
-  2. Documentation & Context via Ref MCP - Use ref MCP for all docs, learning, and SDK references
-  3. Database & Backend via Supabase MCP - Use Supabase MCP for all DB, auth, storage, branching
-  4. Payments via Stripe MCP - Use Stripe MCP for all payment and subscription operations
-  5. Expo/EAS via Expo MCP - Use Expo MCP for all dev server, build, and deployment workflows
+Modified Principles:
+  - None (all existing principles unchanged)
 
 Added Sections:
-  - Security and Configuration
-  - Enforcement
+  - Principle VI: Git Commit Discipline
+
+Removed Sections:
+  - None
 
 Templates Requiring Updates:
-  ✅ .specify/templates/plan-template.md - Constitution Check section validated
-  ✅ .specify/templates/spec-template.md - Requirements alignment verified
-  ✅ .specify/templates/tasks-template.md - Task categorization verified
-  ✅ CLAUDE.md - MCP tool reference table consistent
+  ✅ .specify/templates/plan-template.md - Constitution Check section verified (no changes needed)
+  ✅ .specify/templates/spec-template.md - Requirements alignment verified (no changes needed)
+  ✅ .specify/templates/tasks-template.md - Task categorization verified (no changes needed)
+  ✅ .claude/commands/speckit.implement.md - Updated with explicit git commit requirements at step 9
+  ✅ CLAUDE.md - MCP tool reference table remains consistent (no changes needed)
 
 Follow-up TODOs: None
 
 Notes:
-  - First constitution ratification for YogaAgeProof AI
-  - All MCP tool references cross-validated against AllmcptoolsInfo.md
-  - No agent-specific names used; guidance is project-generic
+  - Added new mandatory principle for git commit discipline after /implement completion
+  - This principle enforces version control hygiene and prevents uncommitted work
+  - Agents must commit with descriptive messages and halt on commit failures
+  - Updated speckit.implement.md command to include commit step after task completion
 -->
 
 # YogaAgeProof AI Constitution
@@ -73,6 +74,17 @@ Notes:
 
 **Rationale**: Expo MCP provides the official, tested interface to Expo development services. Manual CLI invocations may bypass configuration validation or introduce build inconsistencies.
 
+### VI. Git Commit Discipline
+
+**All implementation agents MUST commit all code and asset changes to the active git branch immediately after successfully completing each `/speckit-implement` command.**
+
+- Every commit MUST include a clear, descriptive commit message summarizing the implemented feature or change.
+- No code, configuration, or asset changes should remain uncommitted after a completed implementation task.
+- Work MUST be organized in project feature branches according to the plan/task structure.
+- If a commit cannot be made (e.g., due to merge conflicts or lack of git context), the agent MUST halt and raise an exception for human attention.
+
+**Rationale**: Immediate commits after task completion ensure version control hygiene, enable atomic rollbacks, provide clear audit trails, and prevent loss of work. Feature branch organization maintains clean history and enables parallel development. Halting on commit failures prevents silent failures that could lead to lost work or inconsistent repository state.
+
 ## Security and Configuration
 
 **Never hard-code keys, secrets, or sensitive environment values.** Require or document all such values as environment variables and ensure setup scripts or manifests clearly indicate what envs are required.
@@ -102,4 +114,4 @@ Notes:
 
 **Reference**: Always refer to the full attached MCP tool manifest (`AllmcptoolsInfo.md` and `CLAUDE.md`) to ensure agents select the precise tool for every operation.
 
-**Version**: 1.0.0 | **Ratified**: 2025-11-26 | **Last Amended**: 2025-11-26
+**Version**: 1.1.0 | **Ratified**: 2025-11-26 | **Last Amended**: 2025-11-26

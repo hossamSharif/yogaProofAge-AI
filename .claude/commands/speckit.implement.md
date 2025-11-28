@@ -125,7 +125,15 @@ You **MUST** consider the user input before proceeding (if not empty).
    - Suggest next steps if implementation cannot proceed
    - **IMPORTANT** For completed tasks, make sure to mark the task off as [X] in the tasks file.
 
-9. Completion validation:
+9. **Git Commit (Mandatory - Constitution Principle VI)**:
+   - After ALL tasks in the implementation are successfully completed, commit all changes to the active git branch
+   - Commit message format: `feat: [feature-name] - [brief description of completed implementation]`
+   - Example: `feat: user-authentication - implement login, signup, and password reset`
+   - Include all modified files: code, configuration, documentation, and task updates
+   - **If commit fails**: Halt execution immediately and raise an error for human attention
+   - **Verification**: Run `git status` after commit to confirm clean working directory
+
+10. Completion validation:
    - Verify all required tasks are completed
    - Check that implemented features match the original specification
    - Validate that tests pass and coverage meets requirements

@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+build/
+.expo/
+.expo-shared/
+web-build/
+
+# Coverage
+coverage/
+
+# Generated files
+*.min.js

@@ -1,0 +1,41 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "retry": "Retry",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "done": "Done",
+    "next": "Next",
+    "back": "Back",
+    "skip": "Skip",
+    "getStarted": "Get Started"
+  },
+  "auth": {
+    "login": "Log In",
+    "register": "Sign Up",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot Password?",
+    "noAccount": "Don't have an account?",
+    "haveAccount": "Already have an account?",
+    "signInWithGoogle": "Sign in with Google",
+    "signInWithApple": "Sign in with Apple"
+  },
+  "onboarding": {
+    "welcome": "Welcome to YogaAgeProof AI",
+    "tutorial": "Let's get you started"
+  },
+  "scanner": {
+    "scanFace": "Scan Your Face",
+    "analyzing": "Analyzing...",
+    "results": "Scan Results"
+  },
+  "routine": {
+    "yourRoutine": "Your Routine",
+    "startSession": "Start Session",
+    "completeSession": "Complete Session"
+  }
+}

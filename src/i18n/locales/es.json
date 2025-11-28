@@ -1,0 +1,16 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "retry": "Reintentar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "done": "Hecho",
+    "next": "Siguiente",
+    "back": "Atrás",
+    "skip": "Omitir",
+    "getStarted": "Comenzar"
+  }
+}
