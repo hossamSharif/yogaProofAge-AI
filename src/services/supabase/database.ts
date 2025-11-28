@@ -292,6 +292,30 @@ export async function getRoutineSteps(routineId: string): Promise<RoutineStep[]>
   return data || [];
 }
 
+export async function updateRoutineStep(
+  stepId: string,
+  updates: Partial<RoutineStep>
+): Promise<RoutineStep> {
+  const { data, error } = await supabase
+    .from('routine_steps')
+    .update(updates)
+    .eq('id', stepId)
+    .select()
+    .single();
+
+  if (error) throw error;
+  return data;
+}
+
+export async function deleteRoutineStep(stepId: string): Promise<void> {
+  const { error } = await supabase
+    .from('routine_steps')
+    .delete()
+    .eq('id', stepId);
+
+  if (error) throw error;
+}
+
 // ============================================================================
 // ROUTINE SESSIONS
 // ============================================================================

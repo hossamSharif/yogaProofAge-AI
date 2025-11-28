@@ -135,33 +135,35 @@
 
 ### Implementation for User Story 2
 
-- [ ] T068 [P] [US2] Create product model and database operations in src/services/supabase/database.ts
-- [ ] T069 [P] [US2] Create product data source documentation in specs/001-yogaageproof-ai/contracts/product-data-source.md specifying Open Beauty Facts as source (https://world.openbeautyfacts.org/), schema mapping strategy (product name, brand, category, ingredients, image URL, availability status), filtering criteria (700-1000 products covering all routine categories), and attribution requirements ("Powered by Open Beauty Facts")
-- [ ] T070 [P] [US2] Create product seed migration script specs/001-yogaageproof-ai/contracts/migrations/seed-products.sql that includes SQL stored procedure for product ingestion with data validation rules (required fields: name, brand, category, image URL) and category coverage checks per contract documentation
-- [ ] T071 [P] [US2] Use mcp__supabase__apply_migration with seed-products.sql to create product seeding stored procedure and validate migration success
-- [ ] T072 [P] [US2] Use mcp__supabase__create_function to create Supabase Edge Function 'ingest-products' in src/supabase/functions/ingest-products/ that fetches Open Beauty Facts data via API, filters to 700-1000 products per contract criteria, validates data quality (image URLs accessible, required fields present), and populates products table via stored procedure from T071
-- [ ] T073 [P] [US2] Add data quality validation queries to seed-products.sql: check image URL accessibility (HTTP 200 status), verify required fields populated (name, brand, category), validate category coverage (at least 50 products per routine category: cleanser, toner, serum, moisturizer)
-- [ ] T074 [P] [US2] Add Open Beauty Facts attribution footer to product screens per product-data-source.md: "Product data powered by Open Beauty Facts" with logo and link in src/app/(main)/products/ screens and src/components/routine/ProductCard.tsx
-- [ ] T075 [P] [US2] Create routine model operations (create, read, update status) in src/services/supabase/database.ts per FR-016
-- [ ] T076 [P] [US2] Create routine steps model operations in src/services/supabase/database.ts
-- [ ] T077 [US2] Create routine store with Zustand (active routine, steps, sessions) in src/stores/routine.store.ts
-- [ ] T078 [US2] Implement routine generator service (Claude API) generating 3-5 options in src/services/ai/routine-generator.ts per FR-015 and FR-017
-- [ ] T079 [P] [US2] Create routines list screen in src/app/(main)/(tabs)/routines/index.tsx referencing mydeisgn/routine_builder_-_new_routine
-- [ ] T080 [P] [US2] Create routine builder screen (AI generation trigger) in src/app/(main)/(tabs)/routines/builder.tsx referencing mydeisgn/routine_builder_-_new_routine
-- [ ] T081 [P] [US2] Create expert templates screen in src/app/(main)/(tabs)/routines/templates.tsx referencing mydeisgn/routine_builder_-_expert_templates
-- [ ] T082 [P] [US2] Build routine card component displaying title, focus, duration, benefits in src/components/routine/RoutineCard.tsx per FR-017
-- [ ] T083 [P] [US2] Build routine option selector component (3-5 options) in src/components/routine/RoutineSelector.tsx per FR-015
-- [ ] T084 [US2] Create routine detail screen showing steps in src/app/(main)/(tabs)/routines/[id]/index.tsx
-- [ ] T085 [P] [US2] Create product selection screen with category filters in src/app/(main)/(tabs)/routines/[id]/products.tsx referencing mydeisgn/product_tools_-_overview per FR-019
-- [ ] T086 [P] [US2] Build product card component with AI insights button and online search button in src/components/routine/ProductCard.tsx per FR-021
-- [ ] T087 [P] [US2] Build product category filter component in src/components/routine/CategoryFilter.tsx per FR-069
-- [ ] T088 [US2] Implement product insight service (Claude API) generating personalized suitability explanations in src/services/ai/product-insights.ts per FR-067
-- [ ] T089 [P] [US2] Build product insight modal component in src/components/routine/ProductInsightModal.tsx
-- [ ] T090 [US2] Implement online product search integration (browser link) in src/utils/productSearch.ts per FR-023 and FR-068
-- [ ] T091 [US2] Add routine activation logic (set status='active', archive previous) in routine store per FR-018
-- [ ] T092 [US2] Implement product selection validation (all required steps have products) in src/utils/routineValidation.ts per FR-022
+- [X] T068 [P] [US2] Create product model and database operations in src/services/supabase/database.ts
+- [X] T069 [P] [US2] Create product data source documentation in specs/001-yogaageproof-ai/contracts/product-data-source.md specifying Open Beauty Facts as source (https://world.openbeautyfacts.org/), schema mapping strategy (product name, brand, category, ingredients, image URL, availability status), filtering criteria (700-1000 products covering all routine categories), and attribution requirements ("Powered by Open Beauty Facts")
+- [X] T070 [P] [US2] Create product seed migration script specs/001-yogaageproof-ai/contracts/migrations/seed-products.sql that includes SQL stored procedure for product ingestion with data validation rules (required fields: name, brand, category, image URL) and category coverage checks per contract documentation
+- [X] T071 [P] [US2] Use mcp__supabase__apply_migration with seed-products.sql to create product seeding stored procedure and validate migration success
+- [X] T072 [P] [US2] Use mcp__supabase__create_function to create Supabase Edge Function 'ingest-products' in src/supabase/functions/ingest-products/ that fetches Open Beauty Facts data via API, filters to 700-1000 products per contract criteria, validates data quality (image URLs accessible, required fields present), and populates products table via stored procedure from T071
+- [X] T073 [P] [US2] Add data quality validation queries to seed-products.sql: check image URL accessibility (HTTP 200 status), verify required fields populated (name, brand, category), validate category coverage (at least 50 products per routine category: cleanser, toner, serum, moisturizer)
+- [X] T074 [P] [US2] Add Open Beauty Facts attribution footer to product screens per product-data-source.md: "Product data powered by Open Beauty Facts" with logo and link in src/app/(main)/products/ screens and src/components/routine/ProductCard.tsx
+- [X] T075 [P] [US2] Create routine model operations (create, read, update status) in src/services/supabase/database.ts per FR-016
+- [X] T076 [P] [US2] Create routine steps model operations in src/services/supabase/database.ts
+- [X] T077 [US2] Create routine store with Zustand (active routine, steps, sessions) in src/stores/routine.store.ts
+- [X] T078 [US2] Implement routine generator service (Claude API) generating 3-5 options in src/services/ai/routine-generator.ts per FR-015 and FR-017
+- [X] T079 [P] [US2] Create routines list screen in src/app/(main)/(tabs)/routines/index.tsx referencing mydeisgn/routine_builder_-_new_routine
+- [X] T080 [P] [US2] Create routine builder screen (AI generation trigger) in src/app/(main)/(tabs)/routines/builder.tsx referencing mydeisgn/routine_builder_-_new_routine
+- [X] T081 [P] [US2] Create expert templates screen in src/app/(main)/(tabs)/routines/templates.tsx referencing mydeisgn/routine_builder_-_expert_templates
+- [X] T082 [P] [US2] Build routine card component displaying title, focus, duration, benefits in src/components/routine/RoutineCard.tsx per FR-017
+- [X] T083 [P] [US2] Build routine option selector component (3-5 options) in src/components/routine/RoutineSelector.tsx per FR-015
+- [X] T084 [US2] Create routine detail screen showing steps in src/app/(main)/(tabs)/routines/[id]/index.tsx
+- [X] T085 [P] [US2] Create product selection screen with category filters in src/app/(main)/(tabs)/routines/[id]/products.tsx referencing mydeisgn/product_tools_-_overview per FR-019
+- [X] T086 [P] [US2] Build product card component with AI insights button and online search button in src/components/routine/ProductCard.tsx per FR-021
+- [X] T087 [P] [US2] Build product category filter component in src/components/routine/CategoryFilter.tsx per FR-069
+- [X] T088 [US2] Implement product insight service (Claude API) generating personalized suitability explanations in src/services/ai/product-insights.ts per FR-067
+- [X] T089 [P] [US2] Build product insight modal component in src/components/routine/ProductInsightModal.tsx
+- [X] T090 [US2] Implement online product search integration (browser link) in src/utils/productSearch.ts per FR-023 and FR-068
+- [X] T091 [US2] Add routine activation logic (set status='active', archive previous) in routine store per FR-018
+- [X] T092 [US2] Implement product selection validation (all required steps have products) in src/utils/routineValidation.ts per FR-022
 
 **Checkpoint**: Users can generate AI routines, select preferred routine, and add products for each step
+
+**Phase 4 Status**: ✅ COMPLETE - All 25/25 tasks done (T068-T092). User Story 2 ready for testing.
 
 ---
 
