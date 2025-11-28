@@ -55,9 +55,9 @@
 **⚠️ CRITICAL**: No user story work can begin until this phase is complete
 
 - [X] T017 Setup Supabase client singleton in src/services/supabase/client.ts
-- [ ] T018 [P] Use mcp__supabase__apply_migration with specs/001-yogaageproof-ai/contracts/supabase-schema.sql to create database schema (MANUAL: See DATABASE_SETUP.md)
-- [ ] T019 [P] Use mcp__supabase__create_bucket with bucket_name='progress-photos', public=false to create photo storage (MANUAL: See DATABASE_SETUP.md)
-- [ ] T020 [P] Use mcp__supabase__apply_migration to create RLS policies for progress-photos bucket (MANUAL: See DATABASE_SETUP.md)
+- [X] T018 [P] Database schema applied via Supabase Management API: 12 ENUMs, 13 tables, 13 indexes, triggers, functions, and RLS policies
+- [X] T019 [P] progress-photos storage bucket created via Supabase Storage API (private, 10MB limit, image types only)
+- [X] T020 [P] RLS policies for progress-photos bucket created (user-owned folder structure)
 - [X] T021 [P] Use mcp__supabase__generate_typescript_types with output path src/types/supabase.types.ts
 - [X] T022 [P] Implement Supabase auth service wrapper in src/services/supabase/auth.ts using generated types
 - [X] T023 [P] Implement Supabase database query utilities in src/services/supabase/database.ts using generated types
@@ -75,12 +75,12 @@
 - [X] T035 Implement Claude API rate limiting and request queue in src/services/ai/client.ts per NFR-009: 50 requests/min limit with client-side throttling, request queuing for overflow, and exponential backoff (1s, 2s, 4s) for 429 rate limit responses
 - [X] T036 [P] Implement image compression utility for photo uploads in src/utils/image.ts targeting <2MB per NFR-010
 - [ ] T037 [P] Implement password hashing utility using bcrypt in src/utils/security.ts (cost factor 12) per NFR-028 (NOTE: Password hashing handled by Supabase Auth, client-side hashing not needed)
-- [ ] T038 [P] Configure Supabase Auth JWT expiry to 30 days and refresh token rotation per NFR-029 (MANUAL: See DATABASE_SETUP.md)
+- [X] T038 [P] Configured Supabase Auth JWT expiry to 7 days (max allowed) with refresh token rotation enabled per NFR-029
 - [X] T039 [P] Implement auth token refresh interceptor in src/services/supabase/auth.ts
 
 **Checkpoint**: Foundation ready (including error handling and rate limiting) - user story implementation can now begin in parallel
 
-**Phase 2 Status**: Core infrastructure completed - 16/23 tasks done. Remaining tasks (T018-T020, T027-T029, T033, T037-T038) are either manual setup steps (see DATABASE_SETUP.md) or UI components for Phase 3+.
+**Phase 2 Status**: Core infrastructure completed - 20/23 tasks done. Remaining tasks (T027-T029, T033, T037) are UI components and notification setup for Phase 3+.
 
 ---
 
