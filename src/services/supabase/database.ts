@@ -7,7 +7,7 @@ type UserProfileInsert = Database['public']['Tables']['user_profiles']['Insert']
 type UserProfileUpdate = Database['public']['Tables']['user_profiles']['Update'];
 
 type SkinProfile = Database['public']['Tables']['skin_profiles']['Row'];
-type SkinProfileInsert = Database['public']['Tables']['user_profiles']['Insert'];
+type SkinProfileInsert = Database['public']['Tables']['skin_profiles']['Insert'];
 type SkinProfileUpdate = Database['public']['Tables']['skin_profiles']['Update'];
 
 type Product = Database['public']['Tables']['products']['Row'];
@@ -119,6 +119,32 @@ export async function getSkinProfileHistory(userId: string): Promise<SkinProfile
 
   if (error) throw error;
   return data || [];
+}
+
+export async function updateSkinProfile(
+  profileId: string,
+  updates: SkinProfileUpdate
+): Promise<SkinProfile> {
+  const { data, error } = await supabase
+    .from('skin_profiles')
+    .update(updates)
+    .eq('id', profileId)
+    .select()
+    .single();
+
+  if (error) throw error;
+  return data;
+}
+
+export async function getSkinProfileById(profileId: string): Promise<SkinProfile | null> {
+  const { data, error } = await supabase
+    .from('skin_profiles')
+    .select('*')
+    .eq('id', profileId)
+    .single();
+
+  if (error && error.code !== 'PGRST116') throw error;
+  return data;
 }
 
 // ============================================================================
